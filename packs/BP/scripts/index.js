@@ -13,7 +13,7 @@ function thirst(factor, effect, amp) {
 
 system.runInterval(() => {
     world.getAllPlayers().forEach(s => {
-        s.dimension.runCommand(`titleraw ${s.name} actionbar {"rawtext": [{"text": "Thirst: "}, {"score":{"name": "${s.name}","objective": "thirst"}}, {"text": "%"}]}`)
+        s.dimension.runCommand(`titleraw ${s.name} title {"rawtext": [{"text": "Thirst: "}, {"score":{"name": "${s.name}","objective": "thirst"}}]}`)
     })
 }, 1)
 
