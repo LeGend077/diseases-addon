@@ -10,6 +10,7 @@
 6. Rabies
 7. Swamp Fever
 8. General Problems
+9. Cure for illness
 
 ### Content:
 1. Cold
