@@ -2,7 +2,7 @@
 
 ### To-do list
 
-~~1. Thirst Mechanism~~
+1. ~~Thirst Mechanism~~
 2. Cold
 3. Ender Sickness
 4. Food Poisoning
