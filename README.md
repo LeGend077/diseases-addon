@@ -2,8 +2,11 @@
 
 ### Content:
 1. Cold
-2. Swamp Fever
-3. Food Poisoning
-4. Rabies
-5. Ender Sickness
-6. General Problems: Walking Barefoot
+   - Caused due to prolong time in Cold Biomes.
+3. Swamp Fever
+   - Prolong periods in Swamp.
+4. Sunburn
+5. Food Poisoning
+6. Rabies
+7. Ender Sickness
+8. General Problems: Walking Barefoot, Thirst
