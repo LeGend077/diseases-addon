@@ -1,6 +1,6 @@
 # Diseases Add-On
 
-### To-do list
+## To-do list
 
 1. ~~Thirst Mechanism~~
 2. Cold
@@ -12,16 +12,23 @@
 8. General Problems
 9. Cure for illness
 
-### Content:
+## Content
+
+### Diseases:
 1. Cold
-   - Caused due to prolong time in Cold Biomes.
+   - Caused by prolong periods in Cold Biomes.
 2. Swamp Fever
-   - Prolong periods in Swamp.
+   - Caused by prolong periods in Swamp.
 3. Sunburn
-   - Caused by direct contact of skin to sun.
-   - Prominant in deserts.
-   - Avoided by Armor.
+   - Caused by prolong periods in Hot Biomes.
+   - Can be avoided by wearing an Armor.
 4. Food Poisoning
+   - A chance to get poisoned by eating uncooked foods.
 5. Rabies
+   - A chance to get rabies from getting bit by Bats or Wolves.
 6. Ender Sickness
-7. General Problems: Walking Barefoot, Thirst
+   - A chance to get sick from overusing ender pearls.
+
+### General Problems: 
+1. Walking Barefoot<br>
+2. Thirst
