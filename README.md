@@ -25,7 +25,7 @@
 4. Food Poisoning
    - A chance to get poisoned by eating uncooked foods.
 5. Rabies
-   - A chance to get rabies from getting bit by Bats or Wolves.
+   - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
 6. Ender Sickness
    - A chance to get sick from overusing ender pearls.
 
