@@ -7,7 +7,7 @@
 3. Ender Sickness
 4. Food Poisoning
 5. Sunburn
-6. Rabies
+6. ~~Rabies~~
 7. Swamp Fever
 8. General Problems
 9. Cure for illness
