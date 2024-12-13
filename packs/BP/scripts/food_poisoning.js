@@ -1,13 +1,5 @@
 import { EntityType, system, world } from "@minecraft/server";
 
-system.runInterval(() => {
-    world.getAllPlayers().forEach(player => {
-        if (!player.hasTag("joined")) {
-            player.setDynamicProperty('has_foodpoisoning', false)
-        }
-    })
-}, 1)
-
 world.afterEvents.itemCompleteUse.subscribe(e => {
     const {source, itemStack, useDuration} = e
 
