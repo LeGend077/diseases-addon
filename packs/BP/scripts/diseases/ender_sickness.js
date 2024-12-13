@@ -17,7 +17,10 @@ world.afterEvents.itemUse.subscribe((ev) => {
     if (currentTime - enderSicknessProps.lastIncrementTime >= 1000) {
       enderSicknessProps.lastIncrementTime = currentTime;
 
-      if (enderSicknessProps.enderPearlCount < enderSicknessProps.maxEnderPearl) {
+      if (
+        enderSicknessProps.enderPearlCount < enderSicknessProps.maxEnderPearl &&
+        Math.random() < 0.5 // 50% chance of incrementing
+      ) {
         enderSicknessProps.enderPearlCount++;
       } else {
         source.setDynamicProperty('has_ender_sickness', true);

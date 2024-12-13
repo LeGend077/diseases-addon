@@ -4,7 +4,7 @@
 
 1. ~~Thirst Mechanism~~
 2. Cold
-3. Ender Sickness
+3. ~~Ender Sickness~~
 4. ~~Food Poisoning~~
 5. Sunburn
 6. ~~Rabies~~
@@ -23,11 +23,11 @@
    - Caused by prolong periods in Hot Biomes.
    - Can be avoided by wearing an Armor.
 4. Food Poisoning
-   - A chance to get poisoned by eating uncooked foods.
+   - A 50% chance to get poisoned by eating raw foods.
 5. Rabies
    - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
 6. Ender Sickness
-   - A chance to get sick from overusing ender pearls.
+   - A 50% chance to get sick from using more than 8 ender pearls.
 
 ### General Problems: 
 1. Walking Barefoot<br>
