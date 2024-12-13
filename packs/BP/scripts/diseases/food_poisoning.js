@@ -5,7 +5,9 @@ const rawFood = [
     "minecraft:beef",
     "minecraft:mutton",
     "minecraft:chicken",
-    "minecraft:rabbit"
+    "minecraft:rabbit",
+    "minecraft:salmon",
+    "minecraft:cod"
 ];
 
 world.afterEvents.itemCompleteUse.subscribe((e) => {
@@ -13,8 +15,7 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
 
     if (
         rawFood.includes(itemStack.typeId) && 
-        Math.random() < 0.50 && // 50% chance of food poisoning from raw food
-        !source.getDynamicProperty('has_food_poison')
+        Math.random() < 0.50 // 50% chance of food poisoning from raw food
     ) {
         source.setDynamicProperty('has_food_poison', true);
 
@@ -23,12 +24,12 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
             amplifier: 1
         });
         source.addEffect('nausea', 200, {
-            "showParticles": false,
-            "amplifier": 1
+            showParticles: false,
+            amplifier: 1
         });
         source.addEffect('hunger', 24000, {
-            "showParticles": false,
-            "amplifier": 2
+            showParticles: false,
+            amplifier: 2
         });
 
         system.runTimeout(() => source.setDynamicProperty('has_food_poison', false), 200)
