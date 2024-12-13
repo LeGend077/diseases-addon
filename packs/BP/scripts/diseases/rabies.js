@@ -13,7 +13,7 @@ world.afterEvents.entityHurt.subscribe((ev) => {
     hurtEntity instanceof Player &&
     Math.random() < 0.12 // 12% chance of getting rabies
   ) {
-    if (!hurtEntity.getDynamicProperty('has_rabies')) return;
+    if (hurtEntity.getDynamicProperty('has_rabies')) return;
 
     hurtEntity.setDynamicProperty('has_rabies', true);
     // We just need to implement what to do when player gets rabies

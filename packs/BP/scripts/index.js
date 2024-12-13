@@ -1,4 +1,4 @@
-import { world, system } from "@minecraft/server";
 import "./thirst.js";
-import "./food_poisoning.js";
-import "./rabies.js";
+
+import "./diseases/food_poisoning.js";
+import "./diseases/rabies.js";
