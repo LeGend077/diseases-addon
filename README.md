@@ -5,7 +5,7 @@
 1. ~~Thirst Mechanism~~
 2. Cold
 3. Ender Sickness
-4. Food Poisoning
+4. ~~Food Poisoning~~
 5. Sunburn
 6. ~~Rabies~~
 7. Swamp Fever
