@@ -8,18 +8,17 @@ const sunburnProps = {
 };
 
 system.runInterval(() => {
-  sunburnProps.sunburnTickCounter++
-
-  if (sunburnProps.sunburnTickCounter === sunburnProps.secsToGetSunburn) {
-    sunburnProps.sunburnTickCounter = 0;
-
+  
     const time = world.getTimeOfDay();
     const dim = world.getDimension(MinecraftDimensionTypes.overworld);
 
-    if (!(
+    if (
       (time >= TimeOfDay.Day && time < TimeOfDay.Noon) || // Day
       (time >= TimeOfDay.Noon && time < TimeOfDay.Sunset) // Noon
-    )) return;
+    ) {sunburnProps.sunburnTickCounter++};
+
+    if (sunburnProps.sunburnTickCounter === sunburnProps.secsToGetSunburn) {
+      sunburnProps.sunburnTickCounter = 0;
 
     world.getAllPlayers().forEach((source) => {
       const headLoc = Math.floor(source.getHeadLocation().y);
