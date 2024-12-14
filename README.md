@@ -6,7 +6,7 @@
 2. Cold
 3. ~~Ender Sickness~~
 4. ~~Food Poisoning~~
-5. Sunburn
+5. ~~Sunburn~~
 6. ~~Rabies~~
 7. Swamp Fever
 8. General Problems
@@ -20,8 +20,8 @@
 2. Swamp Fever
    - Caused by prolong periods in Swamp.
 3. Sunburn
-   - Caused by prolong periods in Hot Biomes.
-   - Can be avoided by wearing an Armor.
+   - Caused by prolong periods(10 minutes) in Hot Biomes.
+   - Can be avoided by wearing any Helmet.
 4. Food Poisoning
    - A 50% chance to get poisoned by eating raw foods.
 5. Rabies

@@ -1,4 +1,5 @@
-import { world, system, TicksPerSecond } from "@minecraft/server";
+import { world, system, TicksPerSecond, GameMode } from "@minecraft/server";
+import { clamp } from './index.js';
 
 const thirstProps = {
   thirstMax: 100, // Maximum thirst a player can have
@@ -15,10 +16,6 @@ const thirstProps = {
   ]
 };
 
-function clamp(value, min, max) {
-  return Math.max(min, Math.min(max, value));
-}
-
 function addThirstEffect(source, factor, effect, amp) {
   const playerThirst = source.getDynamicProperty('thirst');
 
@@ -32,6 +29,8 @@ function addThirstEffect(source, factor, effect, amp) {
 
 system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
+    if (source.getGameMode() !== GameMode.survival) return;
+
     const playerThirst = source.getDynamicProperty('thirst');
 
     source.onScreenDisplay.setTitle(`di:${playerThirst}`);
@@ -49,6 +48,8 @@ system.runInterval(() => {
 
 system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
+    if (source.getGameMode() !== GameMode.survival) return;
+
     const playerThirst = source.getDynamicProperty('thirst');
 
     if ((source.isSprinting || source.isSwimming) && playerThirst > 0) {
@@ -60,6 +61,7 @@ system.runInterval(() => {
 world.afterEvents.itemCompleteUse.subscribe((ev) => {
   const { itemStack, source } = ev;
 
+  if (source.getGameMode() !== GameMode.survival) return;
   let playerThirst = source.getDynamicProperty('thirst');
 
   if (itemStack.typeId === 'minecraft:potion') {
