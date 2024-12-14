@@ -1,4 +1,5 @@
 import { BlockVolume, system, TicksPerSecond, world } from "@minecraft/server";
+import { fever } from "./fever";
 
 const coldProps = {
     getColdIn: 600, // 10 minutes to get cold
@@ -23,6 +24,7 @@ system.runInterval(() => {
 
             player.setDynamicProperty('has_cold', true);
             // implement what to do when has cold
+            if (Math.random() < 0.40) {fever(player)};
         }
     });
 }, TicksPerSecond);

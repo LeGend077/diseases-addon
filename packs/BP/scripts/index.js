@@ -2,6 +2,7 @@ import { system, Player } from "@minecraft/server";
 
 import "./thirst.js";
 
+import "./diseases/fever.js"
 import "./diseases/cold.js";
 import "./diseases/food_poisoning.js";
 import "./diseases/rabies.js";
