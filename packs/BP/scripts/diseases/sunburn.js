@@ -1,4 +1,4 @@
-import { system, world, TimeOfDay, MinecraftDimensionTypes, TicksPerSecond, EntityComponentTypes, EquipmentSlot } from "@minecraft/server";
+import { system, world, TimeOfDay, MinecraftDimensionTypes, TicksPerSecond, EntityComponentTypes, EquipmentSlot, BlockVolume } from "@minecraft/server";
 import { clamp } from '../index.js';
 
 const sunburnProps = {
@@ -23,17 +23,27 @@ system.runInterval(() => {
 
     world.getAllPlayers().forEach((source) => {
       const headLoc = Math.floor(source.getHeadLocation().y);
+      
+      const equipmentComp = source.getComponent(EntityComponentTypes.Equippable);
+      const headArmor = equipmentComp.getEquipment(EquipmentSlot.Head);
+
+      const { x, y, z } = source.location;
+      
+      const posCheck1 = source.dimension.containsBlock(new BlockVolume(source.location, {x: x + 4, y: y + 4, z: z + 4}), {
+          includeTypes: ["minecraft:snow", "minecraft:snow_layer"]
+      });
+      const posCheck2 = source.dimension.containsBlock(new BlockVolume(source.location, {x: x - 4, y: y - 4, z: z - 4}), {
+          includeTypes: ["minecraft:snow", "minecraft:snow_layer"]
+      });
 
       for (let i = headLoc; i < clamp(headLoc + sunburnProps.maxYToCheck, dim.heightRange.min, dim.heightRange.max); i++) {
         const blockAbove = dim.getBlock({ x: source.location.x, y: i, z: source.location.z });
 
-        const equipmentComp = source.getComponent(EntityComponentTypes.Equippable);
-        const headArmor = equipmentComp.getEquipment(EquipmentSlot.Head);
-
         if (
           blockAbove.isAir &&
           (i + 1) === (headLoc + sunburnProps.maxYToCheck) && // This is to make the code inside only run once
-          !headArmor
+          !headArmor &&
+          !(posCheck1 || posCheck2) // Make it not run when in cold biomes
         ) {
           source.setDynamicProperty('has_sunburn', true);
           // We just need to implement what to do when player gets sunburn
