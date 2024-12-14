@@ -20,7 +20,7 @@ function addThirstEffect(source, factor, effect, amp) {
   const playerThirst = source.getDynamicProperty('thirst');
 
   if (playerThirst < factor) {
-    source.addEffect(effect, TicksPerSecond, {
+    source.addEffect(effect, TicksPerSecond * 5, {
       showParticles: false,
       amplifier: amp
     });
