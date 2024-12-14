@@ -3,7 +3,7 @@
 ## To-do list
 
 1. ~~Thirst Mechanism~~
-2. Cold
+2. ~~Cold~~
 3. ~~Ender Sickness~~
 4. ~~Food Poisoning~~
 5. ~~Sunburn~~
