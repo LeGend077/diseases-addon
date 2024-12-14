@@ -32,3 +32,6 @@
 ### General Problems: 
 1. Walking Barefoot<br>
 2. Thirst
+   - You can lose thirst from sprinting or swimming.
+   - You can lose thirst from eating cooked foods<br><br>
+   - You can gain thirst from drinking potions or water bottles
