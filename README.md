@@ -8,7 +8,7 @@
 4. ~~Food Poisoning~~
 5. ~~Sunburn~~
 6. ~~Rabies~~
-7. Swamp Fever
+7. Fever
 8. General Problems
 9. Cure for illness
 
@@ -17,8 +17,10 @@
 ### Diseases:
 1. Cold
    - Caused by prolong periods in Cold Biomes.
-2. Swamp Fever
-   - Caused by prolong periods in Swamp.
+2. Fever
+   - Have a chance to get Fever from Cold.
+   - Maybe from Zombies.
+   - Maybe caused by too much time in Nether.
 3. Sunburn
    - Caused by prolong periods(10 minutes) in Hot Biomes.
    - Can be avoided by wearing any Helmet.
