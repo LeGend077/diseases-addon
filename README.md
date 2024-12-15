@@ -11,6 +11,7 @@
 7. Fever
 8. General Problems
 9. Cure for illness
+10. Hot/Cold Bar
 
 ## Content
 
