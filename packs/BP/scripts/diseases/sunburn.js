@@ -1,24 +1,29 @@
-import { system, world, TimeOfDay, MinecraftDimensionTypes, TicksPerSecond, EntityComponentTypes, EquipmentSlot, BlockVolume } from "@minecraft/server";
+import { system, world, TimeOfDay, MinecraftDimensionTypes, TicksPerSecond, EntityComponentTypes, EquipmentSlot, BlockVolume, WeatherType } from "@minecraft/server";
 import { clamp } from '../index.js';
 
 const sunburnProps = {
   secsToGetSunburn: 600, // About 10 minutes to get sunburned
   maxYToCheck: 50, // Check if theres any block 50 blocks above the players head
-  sunburnTickCounter: 0
+  sunburnTickCounter: 0,
+  currentWeather: WeatherType.Clear
 };
 
+world.afterEvents.weatherChange.subscribe((ev) => sunburnProps.currentWeather = ev.newWeather);
+
 system.runInterval(() => {
-  
-    const time = world.getTimeOfDay();
-    const dim = world.getDimension(MinecraftDimensionTypes.overworld);
+  const time = world.getTimeOfDay();
+  const dim = world.getDimension(MinecraftDimensionTypes.overworld);
 
-    if (
-      (time >= TimeOfDay.Day && time < TimeOfDay.Noon) || // Day
-      (time >= TimeOfDay.Noon && time < TimeOfDay.Sunset) // Noon
-    ) {sunburnProps.sunburnTickCounter++};
+  if (
+    ((time >= TimeOfDay.Day && time < TimeOfDay.Noon) || // Day
+    (time >= TimeOfDay.Noon && time < TimeOfDay.Sunset)) && // Noon
+    sunburnProps.currentWeather === WeatherType.Clear
+  ) {
+    sunburnProps.sunburnTickCounter++
+  };
 
-    if (sunburnProps.sunburnTickCounter === sunburnProps.secsToGetSunburn) {
-      sunburnProps.sunburnTickCounter = 0;
+  if (sunburnProps.sunburnTickCounter === sunburnProps.secsToGetSunburn) {
+    sunburnProps.sunburnTickCounter = 0;
 
     world.getAllPlayers().forEach((source) => {
       const headLoc = Math.floor(source.getHeadLocation().y);
