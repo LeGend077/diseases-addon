@@ -8,7 +8,7 @@
 4. ~~Food Poisoning~~
 5. ~~Sunburn~~
 6. ~~Rabies~~
-7. Fever
+7. Zombie Plague
 8. General Problems
 9. Cure for illness
 10. Hot/Cold Bar
@@ -18,10 +18,9 @@
 ### Diseases:
 1. Cold
    - Caused by prolong periods in Cold Biomes.
-2. Fever
-   - Have a chance to get Fever from Cold.
-   - Maybe from Zombies.
-   - Maybe caused by too much time in Nether.
+2. Zombie Plague
+   - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
+   - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness.
 3. Sunburn
    - Caused by prolong periods(10 minutes) in Hot Biomes.
    - Can be avoided by wearing any Helmet.
