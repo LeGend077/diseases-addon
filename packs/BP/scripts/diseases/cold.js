@@ -24,7 +24,6 @@ system.runInterval(() => {
 
             player.setDynamicProperty('has_cold', true);
             // implement what to do when has cold
-            if (Math.random() < 0.40) {fever(player)};
         }
     });
 }, TicksPerSecond);
