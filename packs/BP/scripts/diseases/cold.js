@@ -1,5 +1,4 @@
 import { BlockVolume, system, TicksPerSecond, world } from "@minecraft/server";
-import { fever } from "./fever";
 
 const coldProps = {
     getColdIn: 600, // 10 minutes to get cold

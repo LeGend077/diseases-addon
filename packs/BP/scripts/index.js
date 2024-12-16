@@ -26,5 +26,9 @@ system.afterEvents.scriptEventReceive.subscribe((ev) => {
       }
 
       break;
+    case 'debug:ClearPlayerEntries':
+      sourceEntity.clearDynamicProperties();
+      sourceEntity.sendMessage('Cleared entries.');
+      break;
   }
 });
