@@ -3,7 +3,7 @@ system.runInterval(() => {
     world.getAllPlayers().forEach(player => {
         if (player.getComponent(EntityComponentTypes.Equippable).getEquipment(EquipmentSlot.Feet)) {
             return;
-        } else if (player.isSprinting && !player.isFlying && !player.isSwimming && Math.random() < 0.015) {
+        } else if (player.isSprinting && !player.isFlying && !player.isSwimming && Math.random() < 0.02) {
             player.applyDamage(1, {
                 "cause": EntityDamageCause.contact
             })
