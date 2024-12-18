@@ -1,6 +1,7 @@
 import { system, Player, TicksPerSecond, world } from "@minecraft/server";
 
 import "./thirst.js";
+import "./walking_barefoot.js"
 
 import "./diseases/zombie_plague.js"
 import "./diseases/cold.js";
