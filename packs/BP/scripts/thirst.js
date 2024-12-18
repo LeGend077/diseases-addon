@@ -1,4 +1,4 @@
-import { world, system, TicksPerSecond, GameMode, EntityComponentTypes } from "@minecraft/server";
+import { world, system, TicksPerSecond, GameMode, EntityComponentTypes, Player } from "@minecraft/server";
 import { clamp } from './index.js';
 
 const thirstProps = {
@@ -57,6 +57,13 @@ system.runInterval(() => {
     }
   });
 }, TicksPerSecond * thirstProps.loseThirstEverySeconds);
+
+world.afterEvents.entityDie.subscribe((ev) => {
+  if (ev.deadEntity instanceof Player) {
+    // Reset player thirst
+    deadEntity.setDynamicProperty('thirst', thirstProps.thirstMax);
+  }
+});
 
 world.afterEvents.itemCompleteUse.subscribe((ev) => {
   const { itemStack, source } = ev;
