@@ -1,5 +1,6 @@
 {
   "ui_defs": [
-    "ui/diseases/hud_bars.json"
+    "ui/diseases/hud_bars.json",
+    "ui/diseases/hud_notif.json"
   ]
 }

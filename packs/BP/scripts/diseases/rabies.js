@@ -1,4 +1,5 @@
 import { world, Player } from "@minecraft/server";
+import { createNotif } from '../index.js';
 
 const animalsToGetRabiesFrom = [
   "minecraft:wolf",
@@ -13,7 +14,10 @@ world.afterEvents.entityHurt.subscribe((ev) => {
     hurtEntity instanceof Player &&
     Math.random() < 0.12 // 12% chance of getting rabies
   ) {
+    if (!hurtEntity.getDynamicProperty('has_rabies')) {
+      createNotif(hurtEntity, 'DISEASE:', 'You\'ve caught rabies', 'textures/ui/poison_effect', 'disease');
+    }
+
     hurtEntity.setDynamicProperty('has_rabies', true);
-    // We just need to implement what to do when player gets rabies
   }
 });

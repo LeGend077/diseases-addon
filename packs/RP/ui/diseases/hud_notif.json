@@ -1,0 +1,164 @@
+{
+  "namespace": "hud_notif",
+
+  "anim_slide_right": {
+    "anim_type": "offset",
+    "easing": "in_quart",
+
+    "from": [ "-100%", 0 ],
+    "to": [ 0, 0 ],
+
+    "duration": 0.3,
+    "next": "@hud_notif.anim_wait"
+  },
+
+  "anim_wait": {
+    "anim_type": "wait",
+    "duration": 4.5,
+
+    "next": "@hud_notif.anim_slide_left"
+  },
+
+  "anim_slide_left": {
+    "anim_type": "offset",
+    "easing": "out_quart",
+
+    "from": [ 0, 0 ],
+    "to": [ "-100%", 0 ],
+
+    "duration": 0.3,
+    "destroy_at_end": "notif_panel"
+  },
+
+  "notif_panel": {
+    "type": "panel",
+    "size": [ "65%", "100%cm" ],
+
+    "controls": [
+      {
+        "notif_bg": {
+          "type": "image",
+          "texture": "textures/ui/dis_indi_bg",
+
+          "size": [ "100%", 32 ],
+          "anims": [ "@hud_notif.anim_slide_right", "@hud_notif.anim_wait" ],
+
+          "alpha": 0.8,
+          "propagate_alpha": false,
+
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_property_name": "('§z' + #text)",
+              "target_property_name": "#f_text"
+            },
+            {
+              "binding_type": "view",
+              "source_property_name": "(not ((#f_text - $flag_for_disease) = #f_text)))",
+              "target_property_name": "#visible"
+            }
+          ],
+
+          "controls": [
+            {
+              "label_stack": {
+                "type": "stack_panel",
+                "size": [ "80% - 2px", "100% - 2px" ],
+
+                "offset": [ -2, 0 ],
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+
+                "controls": [
+                  {
+                    "title": {
+                      "type": "label",
+                      "text": "#labeltitle",
+
+                      "size": [ "100%", 15 ],
+                      "layer": 31,
+
+                      "shadow": true,
+                      "font_type": "MinecraftTen",
+
+                      "property_bag": {
+                        "#color_1": [ 1, 0.667, 0, 1 ],
+                        "#color_2": [ 0.667, 0, 0, 1 ],
+                        "#color_3": [ 0.333, 1, 0.333, 1 ]
+                      },
+
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "(#text - $flag_for_disease)",
+                          "target_property_name": "#f_text"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "('#color_' + (('%.41s' * #f_text) - ('%.40s' * #f_text)))",
+                          "target_property_name": "#color"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "(('%.20s' * #f_text) - '\t')",
+                          "target_property_name": "#labeltitle"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "description": {
+                      "type": "label",
+                      "text": "#labeldesc",
+
+                      "size": [ "100%", "fill" ],
+                      "layer": 31,
+
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "(#text - $flag_for_disease)",
+                          "target_property_name": "#f_text"
+                        },
+                        {
+                          "binding_type": "view",
+                          "source_property_name": "((('%.40s' * #f_text) - ('%.20s' * #f_text)) - '\t')",
+                          "target_property_name": "#labeldesc"
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "icon": {
+                "type": "image",
+                "texture": "#texture",
+
+                "size": [ "20% - 10px", "100% - 10px" ],
+                "offset": [ 5, -1 ],
+
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#text - $flag_for_disease)",
+                    "target_property_name": "#f_text"
+                  },
+                  {
+                    "binding_type": "view",
+                    "source_property_name": "(#f_text - ('%.41s' * #f_text))",
+                    "target_property_name": "#texture"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

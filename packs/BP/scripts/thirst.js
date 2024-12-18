@@ -66,15 +66,19 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
 
   const playerHasRabies = source.getDynamicProperty('has_rabies');
 
-  if (itemStack.typeId === 'minecraft:potion' && !playerHasRabies) {
+  if (itemStack.typeId === 'minecraft:potion') {
+    if (playerHasRabies) {
+      source.sendMessage('§cYou can\'t drink any liquids due to rabies hydrophobia.');
+  
+      const inventory = source.getComponent(EntityComponentTypes.Inventory);
+      inventory.container.setItem(source.selectedSlotIndex, itemStack);
+
+      return;
+    }
+
     playerThirst += thirstProps.thirstAdd;
   } else if (thirstProps.foodsToEat.includes(itemStack.typeId.replaceAll('minecraft:', ''))) {
     playerThirst -= thirstProps.thirstAdd;
-  } else if (playerHasRabies) {
-    source.sendMessage('§cYou can\'t drink any liquids due to rabies hydrophobia.');
-
-    const inventory = source.getComponent(EntityComponentTypes.Inventory);
-    inventory.container.setItem(source.selectedSlotIndex, itemStack);
   }
 
   source.setDynamicProperty('thirst', clamp(playerThirst, 0, thirstProps.thirstMax));

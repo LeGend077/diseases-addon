@@ -9,9 +9,27 @@ import "./diseases/rabies.js";
 import "./diseases/ender_sickness.js";
 import "./diseases/sunburn.js";
 
-export function clamp(value, min, max) {
+function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
+
+const padWithTabs = (str, desiredLength) => str + '\t'.repeat(desiredLength - str.replace(/§./g, '').length);
+function createNotif(source, title, desc, icon, type = 'warn') {
+  if (title.replace(/§./g, '').length > 20 || desc.replace(/§./g, '').length > 20) {
+    throw new Error('Your title/description is longer than 20 characters.');
+  }
+
+  let typeNum = 0;
+  if (type === 'warn') typeNum += 1
+  else if (type === 'disease') typeNum += 2
+  else if (type === 'success') typeNum += 3;
+
+  const newTitle = padWithTabs(title, 20),
+        newDesc = padWithTabs(desc, 20);
+
+  source.sendMessage(`dis_indi:${newTitle}${newDesc}${typeNum}${icon}`);
+};
+
 
 /*
   Effect duration is automatically infinite unless cured
@@ -69,3 +87,5 @@ system.afterEvents.scriptEventReceive.subscribe((ev) => {
       break;
   }
 });
+
+export { clamp, createNotif }
