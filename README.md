@@ -12,6 +12,7 @@
 8. General Problems
 9. Cure for illness
 10. Hot/Cold Bar
+11. ~~Walking Barefoot~~
 
 ## Content
 
