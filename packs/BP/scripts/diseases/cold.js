@@ -1,7 +1,7 @@
 import { BlockVolume, system, TicksPerSecond, world } from "@minecraft/server";
 
 const coldProps = {
-    getColdIn: 600, // 10 minutes to get cold
+    getColdIn: 300, // 5 minutes to get cold
     timer: 0
 };
 

@@ -28,6 +28,7 @@
    - A 50% chance to get poisoned by eating raw foods.
 5. Rabies
    - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
+   - Getting a rabies disallows you from drinking water, which is crucial!
 6. Ender Sickness
    - A 50% chance to get sick from using more than 8 ender pearls.
 

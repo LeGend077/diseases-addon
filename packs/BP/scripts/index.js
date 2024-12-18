@@ -1,4 +1,4 @@
-import { system, Player } from "@minecraft/server";
+import { system, Player, TicksPerSecond, world } from "@minecraft/server";
 
 import "./thirst.js";
 
@@ -12,6 +12,43 @@ import "./diseases/sunburn.js";
 export function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
+
+/*
+  Effect duration is automatically infinite unless cured
+
+  'name' property is the dynamic property you put on the player
+*/
+
+const Diseases = {
+  Rabies: {
+    name: 'has_rabies',
+    effects: [
+      { name: 'slowness', duration: 1, amp: 1 },
+      { name: 'nausea', duration: 5, amp: 0  } // Duration 5 for nausea to take effect
+    ]
+  }
+};
+
+system.runInterval(() => {
+  world.getAllPlayers().forEach((source) => {
+    for (const diseaseName in Diseases) {
+      const disease = Diseases[diseaseName];
+
+      if (source.getDynamicProperty(disease.name)) {
+        // Apply effects
+        disease.effects.forEach((effect) => {
+          source.addEffect(effect.name, effect.duration * TicksPerSecond, {
+            showParticles: false,
+            amplifier: effect.amp
+          })
+        });
+
+        // Apply custom funcs
+        if (disease.funcs) disease.funcs.forEach((func) => func(source));
+      }
+    }
+  });
+});
 
 system.afterEvents.scriptEventReceive.subscribe((ev) => {
   const { id, sourceEntity } = ev;

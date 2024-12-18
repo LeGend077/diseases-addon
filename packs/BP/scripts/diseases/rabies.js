@@ -1,4 +1,4 @@
-import { world, system, Player } from "@minecraft/server";
+import { world, Player } from "@minecraft/server";
 
 const animalsToGetRabiesFrom = [
   "minecraft:wolf",

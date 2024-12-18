@@ -1,4 +1,4 @@
-import { world, system, TicksPerSecond, GameMode } from "@minecraft/server";
+import { world, system, TicksPerSecond, GameMode, EntityComponentTypes } from "@minecraft/server";
 import { clamp } from './index.js';
 
 const thirstProps = {
@@ -64,10 +64,17 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
   if (source.getGameMode() !== GameMode.survival) return;
   let playerThirst = source.getDynamicProperty('thirst');
 
-  if (itemStack.typeId === 'minecraft:potion') {
+  const playerHasRabies = source.getDynamicProperty('has_rabies');
+
+  if (itemStack.typeId === 'minecraft:potion' && !playerHasRabies) {
     playerThirst += thirstProps.thirstAdd;
   } else if (thirstProps.foodsToEat.includes(itemStack.typeId.replaceAll('minecraft:', ''))) {
     playerThirst -= thirstProps.thirstAdd;
+  } else if (playerHasRabies) {
+    source.sendMessage('§cYou can\'t drink any liquids due to rabies hydrophobia.');
+
+    const inventory = source.getComponent(EntityComponentTypes.Inventory);
+    inventory.container.setItem(source.selectedSlotIndex, itemStack);
   }
 
   source.setDynamicProperty('thirst', clamp(playerThirst, 0, thirstProps.thirstMax));

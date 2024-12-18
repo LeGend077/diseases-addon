@@ -10,8 +10,6 @@ const zombiePlagueMobs = [
 
 world.afterEvents.entityHurt.subscribe(e => {
     const {hurtEntity, damageSource} = e;
-    console.warn(damageSource.damagingEntity?.typeId);
-
     if (hurtEntity instanceof Player && zombiePlagueMobs.includes(damageSource.damagingEntity?.typeId) && Math.random() < 0.10) {
         hurtEntity.setDynamicProperty('has_zombie_plague', true)
         

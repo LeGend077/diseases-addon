@@ -1,7 +1,7 @@
 import { system, world, TimeOfDay, MinecraftDimensionTypes, TicksPerSecond, EntityComponentTypes, EquipmentSlot, BlockVolume, WeatherType } from "@minecraft/server";
 
 const sunburnProps = {
-  secsToGetSunburn: 600, // About 10 minutes to get sunburned
+  secsToGetSunburn: 300, // About 5 minutes to get sunburned
   sunburnTickCounter: 0,
   currentWeather: WeatherType.Clear
 };
