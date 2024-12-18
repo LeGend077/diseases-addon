@@ -1,5 +1,12 @@
-import { world, system, TicksPerSecond, GameMode, EntityComponentTypes, Player } from "@minecraft/server";
-import { clamp } from './index.js';
+import {
+  world,
+  system,
+  TicksPerSecond,
+  GameMode,
+  EntityComponentTypes,
+  Player,
+} from "@minecraft/server";
+import { clamp } from "./index.js";
 
 const thirstProps = {
   thirstMax: 100, // Maximum thirst a player can have
@@ -12,17 +19,17 @@ const thirstProps = {
     "cooked_chicken",
     "cooked_rabbit",
     "cooked_salmon",
-    "cooked_cod"
-  ]
+    "cooked_cod",
+  ],
 };
 
 function addThirstEffect(source, factor, effect, amp) {
-  const playerThirst = source.getDynamicProperty('thirst');
+  const playerThirst = source.getDynamicProperty("thirst");
 
   if (playerThirst < factor) {
     source.addEffect(effect, TicksPerSecond * 5, {
       showParticles: false,
-      amplifier: amp
+      amplifier: amp,
     });
   }
 }
@@ -31,17 +38,17 @@ system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
     if (source.getGameMode() !== GameMode.survival) return;
 
-    const playerThirst = source.getDynamicProperty('thirst');
+    const playerThirst = source.getDynamicProperty("thirst");
 
     source.onScreenDisplay.setTitle(`di:${playerThirst}`);
 
     // Add the effects of thirstness
-    addThirstEffect(source, 50, 'slowness', 1);
-    addThirstEffect(source, 30, 'mining_fatigue', 2);
-    addThirstEffect(source, 25, 'nausea', 1);
+    addThirstEffect(source, 50, "slowness", 1);
+    addThirstEffect(source, 30, "mining_fatigue", 2);
+    addThirstEffect(source, 25, "nausea", 1);
 
     if (playerThirst === undefined) {
-      source.setDynamicProperty('thirst', thirstProps.thirstMax);
+      source.setDynamicProperty("thirst", thirstProps.thirstMax);
     }
   });
 });
@@ -50,10 +57,10 @@ system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
     if (source.getGameMode() !== GameMode.survival) return;
 
-    const playerThirst = source.getDynamicProperty('thirst');
+    const playerThirst = source.getDynamicProperty("thirst");
 
     if ((source.isSprinting || source.isSwimming) && playerThirst > 0) {
-      source.setDynamicProperty('thirst', playerThirst - 1)
+      source.setDynamicProperty("thirst", playerThirst - 1);
     }
   });
 }, TicksPerSecond * thirstProps.loseThirstEverySeconds);
@@ -61,7 +68,7 @@ system.runInterval(() => {
 world.afterEvents.entityDie.subscribe((ev) => {
   if (ev.deadEntity instanceof Player) {
     // Reset player thirst
-    deadEntity.setDynamicProperty('thirst', thirstProps.thirstMax);
+    deadEntity.setDynamicProperty("thirst", thirstProps.thirstMax);
   }
 });
 
@@ -69,14 +76,16 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
   const { itemStack, source } = ev;
 
   if (source.getGameMode() !== GameMode.survival) return;
-  let playerThirst = source.getDynamicProperty('thirst');
+  let playerThirst = source.getDynamicProperty("thirst");
 
-  const playerHasRabies = source.getDynamicProperty('has_rabies');
+  const playerHasRabies = source.getDynamicProperty("has_rabies");
 
-  if (itemStack.typeId === 'minecraft:potion') {
+  if (itemStack.typeId === "minecraft:potion") {
     if (playerHasRabies) {
-      source.sendMessage('§cYou can\'t drink any liquids due to rabies hydrophobia.');
-  
+      source.sendMessage(
+        "§cYou can't drink any liquids due to rabies hydrophobia."
+      );
+
       const inventory = source.getComponent(EntityComponentTypes.Inventory);
       inventory.container.setItem(source.selectedSlotIndex, itemStack);
 
@@ -84,9 +93,16 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
     }
 
     playerThirst += thirstProps.thirstAdd;
-  } else if (thirstProps.foodsToEat.includes(itemStack.typeId.replaceAll('minecraft:', ''))) {
+  } else if (
+    thirstProps.foodsToEat.includes(
+      itemStack.typeId.replaceAll("minecraft:", "")
+    )
+  ) {
     playerThirst -= thirstProps.thirstAdd;
   }
 
-  source.setDynamicProperty('thirst', clamp(playerThirst, 0, thirstProps.thirstMax));
+  source.setDynamicProperty(
+    "thirst",
+    clamp(playerThirst, 0, thirstProps.thirstMax)
+  );
 });

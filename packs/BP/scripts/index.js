@@ -1,9 +1,9 @@
 import { system, Player, TicksPerSecond, world } from "@minecraft/server";
 
 import "./thirst.js";
-import "./walking_barefoot.js"
+import "./walking_barefoot.js";
 
-import "./diseases/zombie_plague.js"
+import "./diseases/zombie_plague.js";
 import "./diseases/cold.js";
 import "./diseases/food_poisoning.js";
 import "./diseases/rabies.js";
@@ -14,23 +14,27 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
-const padWithTabs = (str, desiredLength) => str + '\t'.repeat(desiredLength - str.replace(/§./g, '').length);
-function createNotif(source, title, desc, icon, type = 'warn') {
-  if (title.replace(/§./g, '').length > 20 || desc.replace(/§./g, '').length > 20) {
-    throw new Error('Your title/description is longer than 20 characters.');
+const padWithTabs = (str, desiredLength) =>
+  str + "\t".repeat(desiredLength - str.replace(/§./g, "").length);
+
+function createNotif(source, title, desc, icon, type = "warn") {
+  if (
+    title.replace(/§./g, "").length > 20 ||
+    desc.replace(/§./g, "").length > 20
+  ) {
+    throw new Error("Your title/description is longer than 20 characters.");
   }
 
   let typeNum = 0;
-  if (type === 'warn') typeNum += 1
-  else if (type === 'disease') typeNum += 2
-  else if (type === 'success') typeNum += 3;
+  if (type === "warn") typeNum += 1;
+  else if (type === "disease") typeNum += 2;
+  else if (type === "success") typeNum += 3;
 
   const newTitle = padWithTabs(title, 20),
-        newDesc = padWithTabs(desc, 20);
+    newDesc = padWithTabs(desc, 20);
 
   source.sendMessage(`dis_indi:${newTitle}${newDesc}${typeNum}${icon}`);
-};
-
+}
 
 /*
   Effect duration is automatically infinite unless cured
@@ -40,12 +44,12 @@ function createNotif(source, title, desc, icon, type = 'warn') {
 
 const Diseases = {
   Rabies: {
-    name: 'has_rabies',
+    name: "has_rabies",
     effects: [
-      { name: 'slowness', duration: 1, amp: 1 },
-      { name: 'nausea', duration: 5, amp: 0  } // Duration 5 for nausea to take effect
-    ]
-  }
+      { name: "slowness", duration: 1, amp: 1 },
+      { name: "nausea", duration: 5, amp: 0 }, // Duration 5 for nausea to take effect
+    ],
+  },
 };
 
 system.runInterval(() => {
@@ -58,8 +62,8 @@ system.runInterval(() => {
         disease.effects.forEach((effect) => {
           source.addEffect(effect.name, effect.duration * TicksPerSecond, {
             showParticles: false,
-            amplifier: effect.amp
-          })
+            amplifier: effect.amp,
+          });
         });
 
         // Apply custom funcs
@@ -74,19 +78,21 @@ system.afterEvents.scriptEventReceive.subscribe((ev) => {
   if (!sourceEntity instanceof Player) return;
 
   switch (id) {
-    case 'debug:GetPlayerEntries':
-      sourceEntity.sendMessage('Property Entries:');
+    case "debug:GetPlayerEntries":
+      sourceEntity.sendMessage("Property Entries:");
 
       for (const id of sourceEntity.getDynamicPropertyIds()) {
-        sourceEntity.sendMessage(`\n- ${id}: ${sourceEntity.getDynamicProperty(id)}`);
+        sourceEntity.sendMessage(
+          `\n- ${id}: ${sourceEntity.getDynamicProperty(id)}`
+        );
       }
 
       break;
-    case 'debug:ClearPlayerEntries':
+    case "debug:ClearPlayerEntries":
       sourceEntity.clearDynamicProperties();
-      sourceEntity.sendMessage('Cleared entries.');
+      sourceEntity.sendMessage("Cleared entries.");
       break;
   }
 });
 
-export { clamp, createNotif }
+export { clamp, createNotif };
