@@ -2,18 +2,18 @@
 
 ## To-do list
 
-1. ~~Thirst Mechanism~~
+1. ~~Thirst Mechanism~~ ✔️
 2. ~~Cold~~
 3. ~~Ender Sickness~~
-4. ~~Food Poisoning~~
+4. ~~Food Poisoning~~  ✔️
 5. ~~Sunburn~~
 6. ~~Rabies~~
 7. Zombie Plague
-8. General Problems
+8. ~~General Problems~~ ✔️
 9. Cure for illness
 10. Hot/Cold Bar
-11. ~~Walking Barefoot~~
-12. ~~Improve food poisoning/ender sickness code~~
+11. ~~Walking Barefoot~~ ✔️
+12. ~~Improve food poisoning/ender sickness code~~ ✔️
 
 ## Content
 
