@@ -35,7 +35,7 @@
   "chat_panel/stack_panel": {
     "factory": {
       "name": "chat_item_factory",
-      "max_children_size": 2,
+      "max_children_size": 8,
       "control_ids": {
         "chat_item": "chat_item@hud.chat_grid_item"
       }

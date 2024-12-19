@@ -7,7 +7,10 @@ import "./diseases/zombie_plague.js";
 import "./diseases/cold.js";
 import "./diseases/food_poisoning.js";
 import "./diseases/rabies.js";
+
 import "./diseases/ender_sickness.js";
+import { cantUseEnderPearls } from "./diseases/ender_sickness.js";
+
 import "./diseases/sunburn.js";
 
 function clamp(value, min, max) {
@@ -50,17 +53,25 @@ const Diseases = {
       { name: "nausea", duration: 5, amp: 0 }, // Duration 5 for nausea to take effect
     ],
   },
+  Ender_Sickness: {
+    name: "has_ender_sickness",
+    funcs: [cantUseEnderPearls],
+    effects: [{ name: "blindness", duration: 3, amp: 0 }],
+  },
   Food_Poison: {
     name: "has_food_poison",
     effects: [
       { name: "hunger", duration: 5, amp: 1 }, // Duration 5 for hunger to take effect
-      { name: "poison", duration: 5, amp: 0 }, // Duration 5 for poison to take effect
     ],
   },
 };
 
 system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
+    const diseaseProperties = source.getDynamicProperty("diseaseProperties");
+    if (!diseaseProperties)
+      source.setDynamicProperty("diseaseProperties", JSON.stringify({}));
+
     for (const diseaseName in Diseases) {
       const disease = Diseases[diseaseName];
 

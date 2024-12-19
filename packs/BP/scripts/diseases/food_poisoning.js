@@ -1,4 +1,4 @@
-import { world } from "@minecraft/server";
+import { world, TicksPerSecond } from "@minecraft/server";
 import { createNotif } from "../index.js";
 
 const rawFood = [
@@ -18,7 +18,7 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
     rawFood.includes(itemStack.typeId) &&
     Math.random() < 0.5 // 50% chance of food poisoning from raw food
   ) {
-    if (!source.getDynamicProperty('has_food_poison')) {
+    if (!source.getDynamicProperty("has_food_poison")) {
       createNotif(
         source,
         "DISEASE:",
@@ -26,8 +26,13 @@ world.afterEvents.itemCompleteUse.subscribe((e) => {
         "textures/ui/nausea_effect",
         "disease"
       );
+
+      source.addEffect("poison", TicksPerSecond * 10, {
+        showParticles: false,
+        amplifier: 1,
+      });
     }
-          
+
     source.setDynamicProperty("has_food_poison", true);
   }
 });
