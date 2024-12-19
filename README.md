@@ -13,6 +13,7 @@
 9. Cure for illness
 10. Hot/Cold Bar
 11. ~~Walking Barefoot~~
+12. Improve food poisoning/ender sickness code
 
 ## Content
 
@@ -31,10 +32,13 @@
    - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
    - Getting a rabies disallows you from drinking water, which is crucial!
 6. Ender Sickness
-   - A 50% chance to get sick from using more than 8 ender pearls.
+   - There is a counter that gets incremented each time you throw a pearl up to 8.
+   - A 50% chance to increment the counter everytime you throw a pearl. If the counter is 8, you'll get ender sickness.
 
 ### General Problems: 
 1. Walking Barefoot<br>
+   - A 2% chance of getting damaged by walking barefoot.
+   - Can be avoided by wearing any Boots.
 2. Thirst
    - You can lose thirst from sprinting or swimming.
    - You can lose thirst from eating cooked foods<br><br>
