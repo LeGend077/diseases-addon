@@ -15,7 +15,7 @@ world.afterEvents.entityHurt.subscribe((ev) => {
       createNotif(
         hurtEntity,
         "DISEASE:",
-        "You've caught rabies",
+        "You've caught Rabies.",
         "textures/ui/poison_effect",
         "disease"
       );

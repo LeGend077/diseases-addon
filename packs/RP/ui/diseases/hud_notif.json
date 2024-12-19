@@ -32,7 +32,7 @@
 
   "notif_panel": {
     "type": "panel",
-    "size": [ "65%", "100%cm" ],
+    "size": [ "100%", "100%cm" ],
 
     "controls": [
       {
@@ -95,12 +95,12 @@
                         },
                         {
                           "binding_type": "view",
-                          "source_property_name": "('#color_' + (('%.41s' * #f_text) - ('%.40s' * #f_text)))",
+                          "source_property_name": "('#color_' + (('%.81s' * #f_text) - ('%.80s' * #f_text)))",
                           "target_property_name": "#color"
                         },
                         {
                           "binding_type": "view",
-                          "source_property_name": "(('%.20s' * #f_text) - '\t')",
+                          "source_property_name": "(('%.40s' * #f_text) - '\t')",
                           "target_property_name": "#labeltitle"
                         }
                       ]
@@ -122,7 +122,7 @@
                         },
                         {
                           "binding_type": "view",
-                          "source_property_name": "((('%.40s' * #f_text) - ('%.20s' * #f_text)) - '\t')",
+                          "source_property_name": "((('%.80s' * #f_text) - ('%.40s' * #f_text)) - '\t')",
                           "target_property_name": "#labeldesc"
                         }
                       ]
@@ -150,7 +150,7 @@
                   },
                   {
                     "binding_type": "view",
-                    "source_property_name": "(#f_text - ('%.41s' * #f_text))",
+                    "source_property_name": "(#f_text - ('%.81s' * #f_text))",
                     "target_property_name": "#texture"
                   }
                 ]

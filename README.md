@@ -13,7 +13,7 @@
 9. Cure for illness
 10. Hot/Cold Bar
 11. ~~Walking Barefoot~~
-12. Improve food poisoning/ender sickness code
+12. ~~Improve food poisoning/ender sickness code~~
 
 ## Content
 

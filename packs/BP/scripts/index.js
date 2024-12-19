@@ -19,10 +19,10 @@ const padWithTabs = (str, desiredLength) =>
 
 function createNotif(source, title, desc, icon, type = "warn") {
   if (
-    title.replace(/§./g, "").length > 20 ||
-    desc.replace(/§./g, "").length > 20
+    title.replace(/§./g, "").length > 40 ||
+    desc.replace(/§./g, "").length > 40
   ) {
-    throw new Error("Your title/description is longer than 20 characters.");
+    throw new Error("Your title/description is longer than 40 characters.");
   }
 
   let typeNum = 0;
@@ -30,8 +30,8 @@ function createNotif(source, title, desc, icon, type = "warn") {
   else if (type === "disease") typeNum += 2;
   else if (type === "success") typeNum += 3;
 
-  const newTitle = padWithTabs(title, 20),
-    newDesc = padWithTabs(desc, 20);
+  const newTitle = padWithTabs(title, 40),
+    newDesc = padWithTabs(desc, 40);
 
   source.sendMessage(`dis_indi:${newTitle}${newDesc}${typeNum}${icon}`);
 }
@@ -48,6 +48,13 @@ const Diseases = {
     effects: [
       { name: "slowness", duration: 1, amp: 1 },
       { name: "nausea", duration: 5, amp: 0 }, // Duration 5 for nausea to take effect
+    ],
+  },
+  Food_Poison: {
+    name: "has_food_poison",
+    effects: [
+      { name: "hunger", duration: 5, amp: 1 }, // Duration 5 for hunger to take effect
+      { name: "poison", duration: 5, amp: 0 }, // Duration 5 for poison to take effect
     ],
   },
 };

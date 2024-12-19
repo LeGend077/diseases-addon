@@ -68,7 +68,7 @@ system.runInterval(() => {
 world.afterEvents.entityDie.subscribe((ev) => {
   if (ev.deadEntity instanceof Player) {
     // Reset player thirst
-    deadEntity.setDynamicProperty("thirst", thirstProps.thirstMax);
+    ev.deadEntity.setDynamicProperty("thirst", thirstProps.thirstMax);
   }
 });
 

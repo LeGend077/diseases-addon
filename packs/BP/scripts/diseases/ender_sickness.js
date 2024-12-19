@@ -21,14 +21,13 @@ world.afterEvents.itemUse.subscribe((ev) => {
       if (enderSicknessProps.enderPearlCount < enderSicknessProps.maxEnderPearl) {
         if (Math.random() < 0.5) { // 50% chance of incrementing
           enderSicknessProps.enderPearlCount++;
-          console.warn(enderSicknessProps.enderPearlCount);
         }
       } else {
         if (!source.getDynamicProperty('has_ender_sickness')) {
           createNotif(
             source,
             "DISEASE:",
-            "You've caught Ender",
+            "You've caught Ender Sickness.",
             "textures/items/ender_pearl",
             "disease"
           );
