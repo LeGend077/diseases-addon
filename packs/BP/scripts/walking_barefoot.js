@@ -4,11 +4,14 @@ import {
   EquipmentSlot,
   system,
   TicksPerSecond,
+  GameMode,
   world,
 } from "@minecraft/server";
 
 system.runInterval(() => {
   world.getAllPlayers().forEach((player) => {
+    if (player.getGameMode() !== GameMode.survival) return;
+
     const isWearingSlippers = player
       .getComponent(EntityComponentTypes.Equippable)
       .getEquipment(EquipmentSlot.Feet);

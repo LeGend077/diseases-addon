@@ -1,6 +1,6 @@
 {
-    "format_version": "1.21.20",
-    "di:ginger_crop": {
-        "sound": "grass"
-    }
+  "format_version": "1.21.20",
+  "di:ginger_crop": {
+    "sound": "grass"
+  }
 }
