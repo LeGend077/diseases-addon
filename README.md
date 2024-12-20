@@ -40,6 +40,8 @@
 6. Ender Sickness
    - There is a counter that gets incremented each time you throw a pearl up to 8.
    - A 50% chance to increment the counter everytime you throw a pearl. If the counter is 8, you'll get ender sickness.
+   - Cure:
+      - Maybe use of the same Mortal-Pestel thing to create something with _endermen eye?_, ender eyes, golden carrot/ginger and ghast tear / suspicious stew _?_.
 
 ### General Problems: 
 1. Walking Barefoot<br>
