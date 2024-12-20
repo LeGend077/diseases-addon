@@ -3,17 +3,20 @@
 ## To-do list
 
 1. ~~Thirst Mechanism~~ ✔️
-2. ~~Cold~~
-3. ~~Ender Sickness~~
-4. ~~Food Poisoning~~ 
-5. ~~Sunburn~~
-6. ~~Rabies~~
-7. Zombie Plague
-8. ~~General Problems~~ ✔️
-9. Cure for illness
-10. Hot/Cold Bar
-11. ~~Walking Barefoot~~ ✔️
-12. ~~Improve food poisoning/ender sickness code~~ ✔️
+2. Add Ginger and its World Generation
+3. Add Enderman Eye
+4. Add Mortar-Pestel and mechanism for its functioning
+5. ~~Cold~~
+6. ~~Ender Sickness~~
+7. ~~Food Poisoning~~ 
+8. ~~Sunburn~~
+9. ~~Rabies~~
+10. Zombie Plague
+11. ~~General Problems~~ ✔️
+12. Cure for illness
+13. Hot/Cold Bar
+14. ~~Walking Barefoot~~ ✔️
+15. ~~Improve food poisoning/ender sickness code~~ ✔️
 
 ## Content
 
