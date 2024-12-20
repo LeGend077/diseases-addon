@@ -54,7 +54,7 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(not ((#f_text - $flag_for_disease) = #f_text)))",
+              "source_property_name": "(not ((#f_text - $flag_for_notif) = #f_text)))",
               "target_property_name": "#visible"
             }
           ],
@@ -90,7 +90,7 @@
                       "bindings": [
                         {
                           "binding_type": "view",
-                          "source_property_name": "(#text - $flag_for_disease)",
+                          "source_property_name": "(#text - $flag_for_notif)",
                           "target_property_name": "#f_text"
                         },
                         {
@@ -117,7 +117,7 @@
                       "bindings": [
                         {
                           "binding_type": "view",
-                          "source_property_name": "(#text - $flag_for_disease)",
+                          "source_property_name": "(#text - $flag_for_notif)",
                           "target_property_name": "#f_text"
                         },
                         {
@@ -145,7 +145,7 @@
                 "bindings": [
                   {
                     "binding_type": "view",
-                    "source_property_name": "(#text - $flag_for_disease)",
+                    "source_property_name": "(#text - $flag_for_notif)",
                     "target_property_name": "#f_text"
                   },
                   {

@@ -17,7 +17,7 @@
           },
           {
             "binding_type": "view",
-            "source_property_name": "((#f_text - $flag_for_disease) = #f_text and #chat_visible)",
+            "source_property_name": "((#f_text - $flag_for_notif) = #f_text and #chat_visible)",
             "target_property_name": "#visible"
           }
         ]
