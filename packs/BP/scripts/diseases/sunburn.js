@@ -9,12 +9,26 @@ import {
   BlockVolume,
   WeatherType,
 } from "@minecraft/server";
+import { createNotif } from "../index.js";
 
 const sunburnProps = {
   secsToGetSunburn: 300, // About 5 minutes to get sunburned
   sunburnTickCounter: 0,
+  thirstLostIncreaseNum: 5,
   currentWeather: WeatherType.Clear,
 };
+
+function increaseThirstLost(source) {
+  const diseaseProperties = JSON.parse(
+    source.getDynamicProperty("diseaseProperties")
+  );
+  diseaseProperties.thirstLostIncrease = sunburnProps.thirstLostIncreaseNum;
+
+  source.setDynamicProperty(
+    "diseaseProperties",
+    JSON.stringify(diseaseProperties)
+  );
+}
 
 world.afterEvents.weatherChange.subscribe(
   (ev) => (sunburnProps.currentWeather = ev.newWeather)
@@ -67,9 +81,22 @@ system.runInterval(() => {
         !headArmor &&
         !(posCheck1 || posCheck2) // Make it not run when in cold biomes
       ) {
+        if (!source.getDynamicProperty("has_sunburn")) {
+          createNotif(
+            source,
+            "DISEASE:",
+            "You've caught Sunburn.",
+            "textures/gui/newgui/mob_effects/fire_resistance_effect",
+            "disease"
+          );
+
+          source.setOnFire(4, true);
+        }
+
         source.setDynamicProperty("has_sunburn", true);
-        // We just need to implement what to do when player gets sunburn
       }
     });
   }
 }, TicksPerSecond);
+
+export { increaseThirstLost };

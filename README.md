@@ -19,17 +19,21 @@
 
 ### Diseases:
 1. Cold
-   - Caused by prolong periods in Cold Biomes.
+   - Caused by prolong periods(5 minutes) in cold areas.
+   - Can be avoided by wearing a Leather Chestplate/Tunic.
    - Cure:
 2. Zombie Plague
    - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness.
 3. Sunburn
-   - Caused by prolong periods(10 minutes) in Hot Biomes.
+   - Caused by prolong exposure(5 minutes) to sunlight.
    - Can be avoided by wearing any Helmet.
+   - You are set on fire for 4 seconds and will increase your thirst lost to +5 unless cured.
 4. Food Poisoning
    - A 50% chance to get poisoned by eating raw foods.
-   - Cure Idea: (Ginger, Honey, _Coal_, Dandelion, etc.) Herbal Remedy Potion / (Mortar-Pestel or something?)
+   - You'll get poisoned for 10 seconds; and hunger forever unless cured.
+   - Cure: 
+      - (Ginger, Honey, _Coal_, Dandelion, etc.) Herbal Remedy Potion / (Mortar-Pestel or something?)
 5. Rabies
    - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
    - Getting a rabies disallows you from drinking water, which is crucial!

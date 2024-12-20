@@ -57,10 +57,13 @@ system.runInterval(() => {
   world.getAllPlayers().forEach((source) => {
     if (source.getGameMode() !== GameMode.survival) return;
 
+    const thirstLostIncreaser = JSON.parse(
+      source.getDynamicProperty("diseaseProperties")
+    ).thirstLostIncrease || 0;
     const playerThirst = source.getDynamicProperty("thirst");
 
     if ((source.isSprinting || source.isSwimming) && playerThirst > 0) {
-      source.setDynamicProperty("thirst", playerThirst - 1);
+      source.setDynamicProperty("thirst", playerThirst - (1 + thirstLostIncreaser));
     }
   });
 }, TicksPerSecond * thirstProps.loseThirstEverySeconds);
@@ -98,7 +101,11 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
       itemStack.typeId.replaceAll("minecraft:", "")
     )
   ) {
-    playerThirst -= thirstProps.thirstAdd;
+    const thirstLostIncreaser = JSON.parse(
+      source.getDynamicProperty("diseaseProperties")
+    ).thirstLostIncrease || 0;
+
+    playerThirst -= (thirstProps.thirstAdd + thirstLostIncreaser);
   }
 
   source.setDynamicProperty(

@@ -12,6 +12,7 @@ import "./diseases/ender_sickness.js";
 import { cantUseEnderPearls } from "./diseases/ender_sickness.js";
 
 import "./diseases/sunburn.js";
+import { increaseThirstLost } from "./diseases/sunburn.js";
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
@@ -50,7 +51,7 @@ const Diseases = {
     name: "has_rabies",
     effects: [
       { name: "slowness", duration: 1, amp: 1 },
-      { name: "nausea", duration: 5, amp: 0 }, // Duration 5 for nausea to take effect
+      { name: "nausea", duration: 5, amp: 0 },
     ],
   },
   Ender_Sickness: {
@@ -61,7 +62,19 @@ const Diseases = {
   Food_Poison: {
     name: "has_food_poison",
     effects: [
-      { name: "hunger", duration: 5, amp: 1 }, // Duration 5 for hunger to take effect
+      { name: "hunger", duration: 5, amp: 1 },
+    ],
+  },
+  Sunburn: {
+    name: "has_sunburn",
+    funcs: [increaseThirstLost],
+  },
+  Cold: {
+    name: "has_cold",
+    effects: [
+      { name: "hunger", duration: 5, amp: 1 },
+      { name: "mining_fatigue", duration: 5, amp: 1 },
+      { name: "weakness", duration: 5, amp: 1 },
     ],
   },
 };
@@ -77,12 +90,14 @@ system.runInterval(() => {
 
       if (source.getDynamicProperty(disease.name)) {
         // Apply effects
-        disease.effects.forEach((effect) => {
-          source.addEffect(effect.name, effect.duration * TicksPerSecond, {
-            showParticles: false,
-            amplifier: effect.amp,
+        if (disease.effects) {
+          disease.effects.forEach((effect) => {
+            source.addEffect(effect.name, effect.duration * TicksPerSecond, {
+              showParticles: false,
+              amplifier: effect.amp,
+            });
           });
-        });
+        }
 
         // Apply custom funcs
         if (disease.funcs) disease.funcs.forEach((func) => func(source));

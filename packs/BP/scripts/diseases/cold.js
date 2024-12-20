@@ -1,7 +1,15 @@
-import { BlockVolume, system, TicksPerSecond, world } from "@minecraft/server";
+import {
+  BlockVolume,
+  system,
+  TicksPerSecond,
+  world,
+  EntityComponentTypes,
+  EquipmentSlot,
+} from "@minecraft/server";
+import { createNotif } from "../index.js";
 
 const coldProps = {
-  getColdIn: 300, // 5 minutes to get cold
+  getColdIn: 10, // 5 minutes to get cold
   timer: 0,
 };
 
@@ -22,13 +30,29 @@ system.runInterval(() => {
       }
     );
 
-    if (posCheck1 || posCheck2) coldProps.timer++;
+    const equipmentComp = player.getComponent(EntityComponentTypes.Equippable);
+    const chestArmor = equipmentComp.getEquipment(EquipmentSlot.Chest);
+
+    if (
+      (posCheck1 || posCheck2) &&
+      chestArmor?.typeId !== "minecraft:leather_chestplate"
+    ) { 
+      coldProps.timer++; 
+    }
 
     if (coldProps.timer === coldProps.getColdIn) {
-      coldProps.timer = 0;
+      if (!player.getDynamicProperty("has_cold")) {
+        createNotif(
+          player,
+          "DISEASE:",
+          "You've caught Cold.",
+          "textures/ui/freeze_heart",
+          "disease"
+        );
+      }
 
+      coldProps.timer = 0;
       player.setDynamicProperty("has_cold", true);
-      // implement what to do when has cold
     }
   });
 }, TicksPerSecond);
