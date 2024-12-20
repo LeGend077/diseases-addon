@@ -9,8 +9,8 @@
 5. ~~Cold~~
 6. ~~Ender Sickness~~
 7. ~~Food Poisoning~~ 
-8. ~~Sunburn~~
-9. ~~Rabies~~
+8. ~~Sunburn~~ ✔️
+9. ~~Rabies~~ ✔️
 10. Zombie Plague
 11. ~~General Problems~~ ✔️
 12. Cure for illness
