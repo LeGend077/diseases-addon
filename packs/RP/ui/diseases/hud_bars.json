@@ -1,6 +1,5 @@
 {
   "namespace": "disease_hud_bars",
-
   "thirst_bar_container": {
     "type": "image",
     "texture": "textures/ui/thirst_bar_empty",
@@ -51,17 +50,12 @@
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#text - (%.3s * #text))",
-              "target_property_name": "#f_text"
+              "source_property_name": "((#text - 'di:') * $one)",
+              "target_property_name": "#thirst_num"
             },
             {
               "binding_type": "view",
-              "source_property_name": "(#f_text * $one)",
-              "target_property_name": "#g_text"
-            },
-            {
-              "binding_type": "view",
-              "source_property_name": "(($clip_max - #g_text) / $clip_max)",
+              "source_property_name": "(($clip_max - #thirst_num) / $clip_max)",
               "target_property_name": "#clip_ratio"
             }
           ]
@@ -69,7 +63,6 @@
       }
     ]
   },
-
   "thirst_bar_factory": {
     "type": "panel",
     "factory": {
