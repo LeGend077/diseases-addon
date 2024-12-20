@@ -20,8 +20,8 @@
 ### Diseases:
 1. Cold
    - Caused by prolong periods(5 minutes) in cold areas.
-   - Can be avoided by wearing a Leather Chestplate/Tunic.
-   - Cure:
+   - Can be avoided by wearing a Leather Chestplate/Tunic (leather cloth).
+   - Cure: 
 2. Zombie Plague
    - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness.
