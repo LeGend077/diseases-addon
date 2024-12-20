@@ -1,0 +1,14 @@
+{
+    "num_mip_levels": 4,
+    "padding": 8,
+    "resource_pack_name": "diseases-addon",
+    "texture_name": "atlas.terrain",
+    "texture_data": {
+        "ginger_crop_0": {
+            "textures": "textures/blocks/ginger_0"
+        },
+        "ginger_crop_1": {
+            "textures": "textures/blocks/ginger_1"
+        }
+    }
+}
