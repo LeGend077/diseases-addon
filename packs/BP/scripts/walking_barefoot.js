@@ -23,8 +23,7 @@ system.runInterval(() => {
       player.applyDamage(1, {
         cause: EntityDamageCause.contact,
       });
-
-      // 2% chance of damage from walking barefoot..
+      player.sendMessage("§cOuch! I stepped on something.");
     }
   });
 }, TicksPerSecond);

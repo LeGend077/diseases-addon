@@ -9,7 +9,7 @@ import {
 import { createNotif } from "../index.js";
 
 const coldProps = {
-  getColdIn: 10, // 5 minutes to get cold
+  getColdIn: 300, // 5 minutes to get cold
   timer: 0,
 };
 
