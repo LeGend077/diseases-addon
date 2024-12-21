@@ -1,3 +1,5 @@
 {
-  "$flag_for_notif": "dis_indi:"
+  "$flag_for_notif": "dis_indi:",
+  
+  "$thirst_bar_full_color": [ 0.113, 0.172, 0.505 ]
 }

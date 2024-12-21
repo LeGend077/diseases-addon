@@ -2,7 +2,7 @@
   "namespace": "disease_hud_bars",
   "thirst_bar_container": {
     "type": "image",
-    "texture": "textures/ui/thirst_bar_empty",
+    "texture": "textures/ui/disease/bar_empty",
     "size": [
       6,
       70
@@ -33,11 +33,12 @@
         "thirst_bar_full": {
           "type": "image",
           "layer": 2,
-          "texture": "textures/ui/thirst_bar_full",
+          "texture": "textures/ui/disease/bar_full",
           "size": [
             "100%",
             "100%"
           ],
+          "color": "$thirst_bar_full_color",
           "clip_pixelperfect": false,
           "clip_direction": "down",
           "$clip_max": 100,

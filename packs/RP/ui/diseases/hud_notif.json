@@ -38,7 +38,7 @@
       {
         "notif_bg": {
           "type": "image",
-          "texture": "textures/ui/dis_indi_bg",
+          "texture": "textures/ui/disease/dis_indi_bg",
 
           "size": [ "100%", 32 ],
           "anims": [ "@hud_notif.anim_slide_right", "@hud_notif.anim_wait" ],
