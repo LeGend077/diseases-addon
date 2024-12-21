@@ -11,7 +11,7 @@
         "di:stage": {
           "values": {
             "min": 0,
-            "max": 1
+            "max": 2
           }
         }
       }
@@ -24,14 +24,14 @@
       "minecraft:collision_box": false,
       "minecraft:selection_box": {
         "origin": [
-          -8,
+          -7,
           0,
-          -8
+          -7
         ],
         "size": [
-          16,
-          12.8,
-          16
+          14,
+          10,
+          14
         ]
       },
       "minecraft:placement_filter": {
@@ -50,7 +50,7 @@
     },
     "permutations": [
       {
-        "condition": "q.block_state('di:stage') <= 1",
+        "condition": "q.block_state('di:stage') <= 2",
         "components": {
           "minecraft:custom_components": [
             "di:ginger_crop_growth"
@@ -67,8 +67,7 @@
               "ambient_occlusion": false,
               "face_dimming": false
             }
-          },
-          "minecraft:selection_box": true
+          }
         }
       },
       {
@@ -81,8 +80,20 @@
               "ambient_occlusion": false,
               "face_dimming": false
             }
+          }
+        }
+      },
+      {
+        "condition": "query.block_state('di:stage') == 2",
+        "components": {
+          "minecraft:material_instances": {
+            "*": {
+              "texture": "ginger_crop_2",
+              "render_method": "alpha_test",
+              "ambient_occlusion": false,
+              "face_dimming": false
+            }
           },
-          "minecraft:selection_box": true,
           "minecraft:loot": "loot_tables/blocks/ginger_crop.json"
         }
       }

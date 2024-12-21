@@ -9,6 +9,9 @@
     },
     "ginger_crop_1": {
       "textures": "textures/blocks/ginger_1"
+    },
+    "ginger_crop_2": {
+      "textures": "textures/blocks/ginger_2"
     }
   }
 }

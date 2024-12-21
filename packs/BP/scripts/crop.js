@@ -1,31 +1,34 @@
-import { EquipmentSlot, GameMode, world } from "@minecraft/server";
+import { EquipmentSlot, GameMode, world, system } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
 
 const CustomCropGrowthBlockComponent = {
   onRandomTick({ block }) {
-    if (Math.random() < 0.3) {
-      block.setPermutation(block.permutation.withState("di:stage", 1));
+    let growth = block.permutation.getState('di:stage')
+    if (Math.random() < 0.35 && growth < 2) {
+      block.setPermutation(block.permutation.withState("di:stage", growth + 1));
+    } else if (growth == 2) {
+      block.setPermutation(block.permutation.withState("di:stage", 2));
     }
   },
-  
   onPlayerInteract({ block, dimension, player }) {
     const equippable = player?.getComponent("minecraft:equippable");
     const mainhandItem = equippable.getEquipment(EquipmentSlot.Mainhand);
+    let growth = block.permutation.getState('di:stage')
     if (mainhandItem?.typeId !== "minecraft:bone_meal")
       return;
 
     if (player?.getGameMode() === GameMode.creative) {
-      block.setPermutation(block.permutation.withState("di:stage", 1));
-    } else {
-      block.setPermutation(block.permutation.withState("di:stage", 1));
-
-      // Decrement stack
-      if (mainhandItem.amount > 1) mainhandItem.amount--;
-      else mainhandItem.setItem(undefined);
+      block.setPermutation(block.permutation.withState("di:stage", 2));
+    } else if (growth < 2) {
+      block.setPermutation(block.permutation.withState("di:stage", growth + 1));
+      system.run(() => { mainhandItem.amount -= 1; }) // not decreasing
+    } else if (growth == 2) {
+      block.setPermutation(block.permutation.withState("di:stage", 2));
+      system.run(() => { mainhandItem.amount -= 1; }) // not decreasing
     }
 
-    // Play effects
+
     const effectLocation = block.center();
     dimension.playSound("item.bone_meal.use", effectLocation);
     dimension.spawnParticle("minecraft:crop_growth_emitter", effectLocation);
