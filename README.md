@@ -3,9 +3,7 @@
 ## To-do list
 
 1. ~~Thirst Mechanism~~ ✔️
-2. Add Ginger and its World Generation
-3. Add Enderman Eye
-4. Add Mortar-Pestel and mechanism for its functioning
+2. ~~Add Ginger and its World Generation~~ ✔️
 5. ~~Cold~~
 6. ~~Ender Sickness~~
 7. ~~Food Poisoning~~ 
