@@ -1,0 +1,25 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shapeless": {
+      "description": {
+        "identifier": "di:honey_rub"
+      },
+      "tags": [ "crafting_table" ],
+      "ingredients": [
+        {
+          "item": "minecraft:honey_bottle"
+        },
+        {
+          "item": "minecraft:waterlily"
+        }
+      ],
+      "unlock": [
+            {
+              "item": "minecraft:honey_bottle"
+            }
+          ],
+      "result": {
+        "item": "di:honey_rub"
+      }
+    }
+}

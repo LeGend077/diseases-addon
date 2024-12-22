@@ -3,6 +3,7 @@ import { system, Player, TicksPerSecond, world } from "@minecraft/server";
 import "./thirst.js";
 import "./walking_barefoot.js";
 import "./crop.js";
+import "./cure.js";
 
 import "./diseases/zombie_plague.js";
 import "./diseases/cold.js";
@@ -37,7 +38,6 @@ function createNotif(source, title, desc, icon, type = "warn") {
 
   const newTitle = padWithTabs(title, 40),
     newDesc = padWithTabs(desc, 40);
-
   source.sendMessage(`dis_indi:${newTitle}${newDesc}${typeNum}${icon}`);
 }
 

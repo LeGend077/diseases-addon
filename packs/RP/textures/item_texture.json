@@ -4,6 +4,9 @@
   "texture_data": {
     "ginger": {
       "textures": "textures/items/ginger"
+    },
+    "honey_rub": {
+      "textures": "textures/items/honey_rub"
     }
   }
 }
