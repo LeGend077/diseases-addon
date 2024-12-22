@@ -2,17 +2,24 @@
 
 ## To-do list
 
-1. ~~Thirst Mechanism~~ ✔️
-2. ~~Add Ginger and its World Generation~~ ✔️
-5. ~~Cold~~
-6. ~~Ender Sickness~~
-7. ~~Food Poisoning~~ 
-8. ~~Sunburn~~ ✔️
-9. ~~Rabies~~ ✔️
-10. Zombie Plague
-11. ~~General Problems~~ ✔️
-12. Cure for illness
-13. Hot/Cold Bar
+1. Hot/Cold Bar (are we doing this?)
+2. Cure for illness:
+   - ~~Sunburn: Honey Rub~~
+   - Zombie Plague: Anti-Rot Potion
+   - Food Poisoning: Herbal Remedy Potion
+   - Cold: Herbal Remedy Potion
+   - Ender Sickness: Ender Potion
+3. Fix item not decreasing.
+4. Add death chances on Rabies
+5. Zombie Plague
+6. ~~Cold~~
+7. ~~Ender Sickness~~
+8. ~~Food Poisoning~~ 
+9. ~~Thirst Mechanism~~ ✔️
+10. ~~Add Ginger and its World Generation~~ ✔️
+11. ~~Sunburn~~ ✔️
+12. ~~Rabies~~ ✔️
+13. ~~General Problems~~ ✔️
 14. ~~Walking Barefoot~~ ✔️
 15. ~~Improve food poisoning/ender sickness code~~ ✔️
 
