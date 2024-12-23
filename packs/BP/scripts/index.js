@@ -78,6 +78,10 @@ const Diseases = {
       { name: "weakness", duration: 5, amp: 1 },
     ],
   },
+  Zombie_Plague: {
+    name: "has_zombie_plague",
+    effects: []
+  }
 };
 
 system.runInterval(() => {

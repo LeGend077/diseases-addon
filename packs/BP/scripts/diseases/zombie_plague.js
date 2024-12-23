@@ -8,6 +8,8 @@ const zombiePlagueMobs = [
   "minecraft:zombie_pigman",
 ];
 
+
+
 world.afterEvents.entityHurt.subscribe((e) => {
   const { hurtEntity, damageSource } = e;
   
@@ -17,7 +19,5 @@ world.afterEvents.entityHurt.subscribe((e) => {
     Math.random() < 0.1
   ) {
     hurtEntity.setDynamicProperty("has_zombie_plague", true);
-
-    // implement what to do when zombie plague
   }
 });

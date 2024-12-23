@@ -9,9 +9,9 @@
    - Food Poisoning: Herbal Remedy Potion
    - Cold: Herbal Remedy Potion
    - Ender Sickness: Ender Potion
-3. Fix item not decreasing.
-4. Add death chances on Rabies
-5. Zombie Plague
+3. Add death chances on Rabies
+4. Zombie Plague
+5. ~~Fix item not decreasing.~~
 6. ~~Cold~~
 7. ~~Ender Sickness~~
 8. ~~Food Poisoning~~ 

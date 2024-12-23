@@ -1,4 +1,4 @@
-import { EquipmentSlot, GameMode, world, system } from "@minecraft/server";
+import { EquipmentSlot, GameMode, world, system, EntityEquippableComponent, ItemStack } from "@minecraft/server";
 
 /** @type {import("@minecraft/server").BlockCustomComponent} */
 
@@ -12,20 +12,34 @@ const CustomCropGrowthBlockComponent = {
     }
   },
   onPlayerInteract({ block, dimension, player }) {
-    const equippable = player?.getComponent("minecraft:equippable");
-    const mainhandItem = equippable.getEquipment(EquipmentSlot.Mainhand);
+    /**
+     * @type {EntityEquippableComponent} mainSlots
+     * @type {ItemStack} mainHandItem
+     */
+    const mainSlots = player?.getComponent("minecraft:equippable")
+    const mainHandItem = mainSlots.getEquipment(EquipmentSlot.Mainhand)
+  
     let growth = block.permutation.getState('di:stage')
-    if (mainhandItem?.typeId !== "minecraft:bone_meal")
+    if (mainHandItem?.typeId !== "minecraft:bone_meal")
       return;
 
     if (player?.getGameMode() === GameMode.creative) {
       block.setPermutation(block.permutation.withState("di:stage", 2));
     } else if (growth < 2) {
       block.setPermutation(block.permutation.withState("di:stage", growth + 1));
-      system.run(() => { mainhandItem.amount -= 1; }) // not decreasing
+      
+      if (mainHandItem.amount > 1) {
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, new ItemStack(mainHandItem.typeId, (mainHandItem.amount - 1)))
+      } else {
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined)
+      }
     } else if (growth == 2) {
       block.setPermutation(block.permutation.withState("di:stage", 2));
-      system.run(() => { mainhandItem.amount -= 1; }) // not decreasing
+      if (mainHandItem.amount > 1) {
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, new ItemStack(mainHandItem.typeId, (mainHandItem.amount - 1)))
+      } else {
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined)
+      }
     }
 
 
