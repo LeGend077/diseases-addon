@@ -5,12 +5,14 @@ import {
   GameMode,
   EntityComponentTypes,
   Player,
+  EntityDamageCause,
 } from "@minecraft/server";
 import { clamp } from "./index.js";
 
 const thirstProps = {
   thirstMax: 100, // Maximum thirst a player can have
   thirstAdd: 20, // The amount thats added to thirst when player drinks. This property is also used to amount to subtract when player eats
+  thirstLostFromFood: 12,
   loseThirstEverySeconds: 5, // The time (in seconds) should player lose thirst
   foodsToEat: [
     "cooked_porkchop",
@@ -69,9 +71,17 @@ system.runInterval(() => {
 }, TicksPerSecond * thirstProps.loseThirstEverySeconds);
 
 world.afterEvents.entityDie.subscribe((ev) => {
-  if (ev.deadEntity instanceof Player) {
-    // Reset player thirst
-    ev.deadEntity.setDynamicProperty("thirst", thirstProps.thirstMax);
+  const {deadEntity} = ev
+  if (deadEntity instanceof Player) {
+    // Reset
+    deadEntity.setDynamicProperty("thirst", thirstProps.thirstMax);
+    deadEntity.setDynamicProperty('has_rabies', false)
+    deadEntity.setDynamicProperty('has_food_poison', false)
+    deadEntity.setDynamicProperty('has_sunburn', false)
+    deadEntity.setDynamicProperty('has_ender_sickness', false)
+    deadEntity.setDynamicProperty('has_cold', false)
+    deadEntity.setDynamicProperty('has_zombie_plague', false)
+    deadEntity.setDynamicProperty('diseaseProperties', '{}')
   }
 });
 
@@ -105,7 +115,7 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
       source.getDynamicProperty("diseaseProperties")
     ).thirstLostIncrease || 0;
 
-    playerThirst -= (thirstProps.thirstAdd + thirstLostIncreaser);
+    playerThirst -= (thirstProps.thirstLostFromFood + thirstLostIncreaser);
   }
 
   source.setDynamicProperty(

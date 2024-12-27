@@ -1,25 +1,34 @@
-import { Container, ContainerSlot, EntityEquippableComponent, EntityInventoryComponent, EntityIsHiddenWhenInvisibleComponent, EquipmentSlot, GameMode, ItemStack, Player, world } from "@minecraft/server";
+import { EntityInventoryComponent, GameMode, ItemStack, Player, world } from "@minecraft/server";
+import { randInt } from "./index.js";
 
 world.afterEvents.itemCompleteUse.subscribe(ev => {
     const { itemStack, source, useDuration } = ev
+    let {x, y, z} = source.location
     if (!(source instanceof Player)) return;
 
+    if (itemStack.typeId === 'di:ender_mushroom_stew') {
+        source.setDynamicProperty('has_ender_sickness', false)
+        let props = JSON.parse(source.getDynamicProperty('diseaseProperties'))
+        props.cantUseEnderPearls=false
+        source.setDynamicProperty('diseaseProperties', JSON.stringify(props))
+        source.addLevels(10)
+        source.tryTeleport({x: x + randInt(-5, 5), y: y, z: z + randInt(-5, 5)})
+    }
+    if (itemStack.typeId === 'di:herbal_mushroom_stew') {
+        source.setDynamicProperty('has_food_poison', false)
+    }
     if (itemStack.typeId === 'di:honey_rub') {
         source.setDynamicProperty('has_sunburn', false);
         if (source.getGameMode() == GameMode.creative) return;
         else {
             /**
-             * @type {EntityEquippableComponent} mainSlots
+             * @type {EntityInventoryComponent} a
              * @type {ItemStack} mainHandItem
              */
-            const mainSlots = source.getComponent("minecraft:equippable")
-            const mainHandItem = mainSlots.getEquipment(EquipmentSlot.Mainhand)
-            mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined)
-
+            source.getComponent("minecraft:inventory").container.setItem(source.selectedSlotIndex, undefined)
             const props = JSON.parse(source.getDynamicProperty('diseaseProperties'))
             props.thirstLostIncrease = 0
             source.setDynamicProperty('diseaseProperties', JSON.stringify(props))
-            // console.warn('done')
         }
     }
 })

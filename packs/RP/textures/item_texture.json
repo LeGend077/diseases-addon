@@ -7,6 +7,12 @@
     },
     "honey_rub": {
       "textures": "textures/items/honey_rub"
+    },
+    "herbal_mushroom_stew": {
+      "textures": "textures/items/herbal_mushroom_stew"
+    },
+    "ender_mushroom_stew": {
+      "textures": "textures/items/ender_mushroom_stew"
     }
   }
 }

@@ -20,6 +20,10 @@ function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value));
 }
 
+function randInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
 const padWithTabs = (str, desiredLength) =>
   str + "\t".repeat(desiredLength - str.replace(/§./g, "").length);
 
@@ -133,4 +137,4 @@ system.afterEvents.scriptEventReceive.subscribe((ev) => {
   }
 });
 
-export { clamp, createNotif };
+export { clamp, createNotif, randInt };

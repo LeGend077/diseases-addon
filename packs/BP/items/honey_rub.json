@@ -11,7 +11,7 @@
       "minecraft:icon": "honey_rub",
       "minecraft:use_animation": "brush",
       "minecraft:use_modifiers": {
-        "use_duration": 2,
+        "use_duration": 1,
         "movement_modifier": 0.33
       },
       "minecraft:max_stack_size": 1

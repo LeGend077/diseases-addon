@@ -1,0 +1,31 @@
+{
+    "format_version": "1.17.41",
+    "minecraft:recipe_shapeless": {
+        "description": {
+            "identifier": "di:ender_mushroom_stew"
+        },
+        "tags": ["crafting_table"],
+        "ingredients": [
+            {
+                "item": "minecraft:mushroom_stew"
+            },
+            {
+                "item": "minecrafT:ender_eye"
+            },
+            {
+                "item": "minecraft:chorus_fruit"
+            },
+            {
+                "item": "minecraft:spider_eye"
+            }
+        ],
+        "unlock": [
+            {
+                "item": "minecraft:chorus_fruit"
+            }
+        ],
+        "result": {
+            "item": "di:ender_mushroom_stew"
+        }
+    }
+}
