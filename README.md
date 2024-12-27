@@ -1,14 +1,13 @@
 # Diseases Add-On
-
 ## To-do list
 
 1. Hot/Cold Bar (are we doing this?)
 2. Cure for illness:
    - ~~Sunburn: Honey Rub~~
    - Zombie Plague: Anti-Rot Potion
-   - Food Poisoning: Herbal Remedy Potion
+   - ~~Food Poisoning: Herbal Remedy~~
    - Cold: Herbal Remedy Potion
-   - Ender Sickness: Ender Potion
+   - ~~Ender Sickness: Ender Potion~~
 3. Add death chances on Rabies
 4. Zombie Plague
 5. ~~Fix item not decreasing.~~
@@ -39,20 +38,25 @@
    - Can be avoided by wearing any Helmet.
    - You are set on fire for 4 seconds and will increase your thirst lost to +5 unless cured.
    - Cure: Honey + Lily Pad = Honey Rub
+   - ![image](https://github.com/user-attachments/assets/9a3320ae-8589-4961-a011-2866b5afb73e)
+
 4. Food Poisoning
    - A 50% chance to get poisoned by eating raw foods.
    - You'll get poisoned for 10 seconds; and hunger forever unless cured.
-   - Cure: 
-      - Ginger, Coal, Dandelion, Honey - Herbal Remedy Potion
+   - Cure: Herbal Mushroom Stew- Ginger, Coal, Honey, Mushroom Stew, Dandelion.
+   - ![image](https://github.com/user-attachments/assets/80b39264-c88e-4748-93e9-4bb9fa9bb43f)
+
 5. Rabies
    - A 12% chance to get rabies from getting bit by Polar Bears and Wolves.
    - Getting a rabies disallows you from drinking water, which is crucial!
    - Dead 99%, 1% of chance of survival.
+
 6. Ender Sickness
    - There is a counter that gets incremented each time you throw a pearl up to 8.
    - A 50% chance to increment the counter everytime you throw a pearl. If the counter is 8, you'll get ender sickness.
-   - Cure:
-      - Suspicious Stew, Ender Eye, Chorus Fruit, Spider Eye.
+   - Cure: Ender Stew- Ender Eye, Chorus Fruit, Spider Eye
+   - ![image](https://github.com/user-attachments/assets/f8002f0e-ef33-4374-9dc3-ad8d7725887c)
+
 
 ### General Problems: 
 1. Walking Barefoot<br>
