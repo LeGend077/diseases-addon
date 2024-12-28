@@ -1,4 +1,4 @@
-import { world, PlayerF } from "@minecraft/server";
+import { world } from "@minecraft/server";
 import { createNotif } from "../index.js";
 
 function wait24HourToDie(source) {
