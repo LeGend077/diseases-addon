@@ -1,25 +1,25 @@
 {
-    "format_version": "1.21.0",
-    "minecraft:scatter_feature": {
-        "description": {
-            "identifier": "di:ginger_crop_feature"
-        },
-        "places_feature": "di:ginger_crop_single",
-        "iterations": "math.random_integer(2,8)",
-        "x": {
-            "extent": [
-                0,
-                8
-            ],
-            "distribution": "gaussian"
-        },
-        "z": {
-            "extent": [
-                0,
-                8
-            ],
-            "distribution": "gaussian"
-        },
-        "y": "q.heightmap(v.worldx, v.worldz)"
-    }
+  "format_version": "1.21.0",
+  "minecraft:scatter_feature": {
+    "description": {
+      "identifier": "di:ginger_crop_feature"
+    },
+    "places_feature": "di:ginger_crop_single",
+    "iterations": "math.random_integer(2,8)",
+    "x": {
+      "extent": [
+        0,
+        8
+      ],
+      "distribution": "gaussian"
+    },
+    "z": {
+      "extent": [
+        0,
+        8
+      ],
+      "distribution": "gaussian"
+    },
+    "y": "q.heightmap(v.worldx, v.worldz)"
+  }
 }

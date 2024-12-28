@@ -8,8 +8,6 @@ const zombiePlagueMobs = [
   "minecraft:zombie_pigman",
 ];
 
-
-
 world.afterEvents.entityHurt.subscribe((e) => {
   const { hurtEntity, damageSource } = e;
   

@@ -8,7 +8,9 @@ import "./cure.js";
 import "./diseases/zombie_plague.js";
 import "./diseases/cold.js";
 import "./diseases/food_poisoning.js";
+
 import "./diseases/rabies.js";
+import { wait24HourToDie } from "./diseases/rabies.js";
 
 import "./diseases/ender_sickness.js";
 import { cantUseEnderPearls } from "./diseases/ender_sickness.js";
@@ -21,7 +23,7 @@ function clamp(value, min, max) {
 }
 
 function randInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 const padWithTabs = (str, desiredLength) =>
@@ -56,8 +58,8 @@ const Diseases = {
     name: "has_rabies",
     effects: [
       { name: "slowness", duration: 1, amp: 1 },
-      { name: "nausea", duration: 5, amp: 0 },
     ],
+    funcs: [wait24HourToDie],
   },
   Ender_Sickness: {
     name: "has_ender_sickness",
@@ -66,9 +68,7 @@ const Diseases = {
   },
   Food_Poison: {
     name: "has_food_poison",
-    effects: [
-      { name: "hunger", duration: 5, amp: 1 },
-    ],
+    effects: [{ name: "hunger", duration: 5, amp: 1 }],
   },
   Sunburn: {
     name: "has_sunburn",
@@ -84,8 +84,8 @@ const Diseases = {
   },
   Zombie_Plague: {
     name: "has_zombie_plague",
-    effects: []
-  }
+    effects: [],
+  },
 };
 
 system.runInterval(() => {

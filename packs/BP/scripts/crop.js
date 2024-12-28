@@ -1,10 +1,14 @@
-import { EquipmentSlot, GameMode, world, system, EntityEquippableComponent, ItemStack } from "@minecraft/server";
-
-/** @type {import("@minecraft/server").BlockCustomComponent} */
+import {
+  EquipmentSlot,
+  GameMode,
+  world,
+  EntityComponentTypes,
+  ItemStack,
+} from "@minecraft/server";
 
 const CustomCropGrowthBlockComponent = {
   onRandomTick({ block }) {
-    let growth = block.permutation.getState('di:stage')
+    let growth = block.permutation.getState("di:stage");
     if (Math.random() < 0.35 && growth < 2) {
       block.setPermutation(block.permutation.withState("di:stage", growth + 1));
     } else if (growth == 2) {
@@ -12,36 +16,36 @@ const CustomCropGrowthBlockComponent = {
     }
   },
   onPlayerInteract({ block, dimension, player }) {
-    /**
-     * @type {EntityEquippableComponent} mainSlots
-     * @type {ItemStack} mainHandItem
-     */
-    const mainSlots = player?.getComponent("minecraft:equippable")
-    const mainHandItem = mainSlots.getEquipment(EquipmentSlot.Mainhand)
-  
-    let growth = block.permutation.getState('di:stage')
-    if (mainHandItem?.typeId !== "minecraft:bone_meal")
-      return;
+    const mainSlots = player?.getComponent(EntityComponentTypes.Equippable);
+    const mainHandItem = mainSlots.getEquipment(EquipmentSlot.Mainhand);
+
+    let growth = block.permutation.getState("di:stage");
+    if (mainHandItem?.typeId !== "minecraft:bone_meal") return;
 
     if (player?.getGameMode() === GameMode.creative) {
       block.setPermutation(block.permutation.withState("di:stage", 2));
-    } else if (growth < 2) {
+    } else if (growth <= 2) {
       block.setPermutation(block.permutation.withState("di:stage", growth + 1));
-      
+
       if (mainHandItem.amount > 1) {
-        mainSlots.setEquipment(EquipmentSlot.Mainhand, new ItemStack(mainHandItem.typeId, (mainHandItem.amount - 1)))
+        mainSlots.setEquipment(
+          EquipmentSlot.Mainhand,
+          new ItemStack(mainHandItem.typeId, mainHandItem.amount - 1)
+        );
       } else {
-        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined)
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined);
       }
     } else if (growth == 2) {
       block.setPermutation(block.permutation.withState("di:stage", 2));
       if (mainHandItem.amount > 1) {
-        mainSlots.setEquipment(EquipmentSlot.Mainhand, new ItemStack(mainHandItem.typeId, (mainHandItem.amount - 1)))
+        mainSlots.setEquipment(
+          EquipmentSlot.Mainhand,
+          new ItemStack(mainHandItem.typeId, mainHandItem.amount - 1)
+        );
       } else {
-        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined)
+        mainSlots.setEquipment(EquipmentSlot.Mainhand, undefined);
       }
     }
-
 
     const effectLocation = block.center();
     dimension.playSound("item.bone_meal.use", effectLocation);

@@ -1,14 +1,14 @@
 {
-    "format_version": "1.21.0",
-    "minecraft:single_block_feature": {
-      "description": {
-        "identifier": "di:ginger_crop_single"
-      },
-      "places_block": "di:ginger_crop_wg",
-      "enforce_placement_rules": true,
-      "enforce_survivability_rules": true,
-      "may_replace": [
-        "minecraft:air"
-      ]
-    }
+  "format_version": "1.21.0",
+  "minecraft:single_block_feature": {
+    "description": {
+      "identifier": "di:ginger_crop_single"
+    },
+    "places_block": "di:ginger_crop_wg",
+    "enforce_placement_rules": true,
+    "enforce_survivability_rules": true,
+    "may_replace": [
+      "minecraft:air"
+    ]
   }
+}

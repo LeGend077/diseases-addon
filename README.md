@@ -1,7 +1,7 @@
 # Diseases Add-On
 ## To-do list
 
-1. Hot/Cold Bar (are we doing this?)
+1. Hot/Cold Bar (are we doing this?) (no we're not)
 2. Cure for illness:
    - ~~Sunburn: Honey Rub~~
    - Zombie Plague: Anti-Rot Potion
