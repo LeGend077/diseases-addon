@@ -28,7 +28,9 @@
 1. Cold
    - Caused by prolong periods(5 minutes) in cold areas.
    - Can be avoided by wearing a Leather Chestplate/Tunic (leather cloth).
-   - Cure: Mushroom Stew, golden carrot, honey, ginger, etc. - Herbal Remedy Potion
+   - Cure: Mushroom Stew, golden carrot, honey, ginger.
+   - ![image](https://github.com/user-attachments/assets/9708b85f-b087-4788-b965-aaddd10d565f)
+
 2. Zombie Plague
    - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness.
