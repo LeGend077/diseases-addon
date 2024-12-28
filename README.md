@@ -6,7 +6,7 @@
    - ~~Sunburn: Honey Rub~~
    - Zombie Plague: Anti-Rot Potion
    - ~~Food Poisoning: Herbal Remedy~~
-   - Cold: Herbal Remedy Potion
+   - ~~Cold: Herbal Remedy Potion~~
    - ~~Ender Sickness: Ender Potion~~
 3. Add death chances on Rabies
 4. Zombie Plague

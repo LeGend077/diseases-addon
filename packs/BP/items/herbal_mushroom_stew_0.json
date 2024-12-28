@@ -2,7 +2,7 @@
   "format_version": "1.21.40",
   "minecraft:item": {
     "description": {
-      "identifier": "di:herbal_mushroom_stew",
+      "identifier": "di:herbal_mushroom_stew_0",
       "menu_category": {
         "category": "equipment"
       }

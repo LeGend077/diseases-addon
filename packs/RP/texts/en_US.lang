@@ -2,5 +2,6 @@ tile.di:ginger_crop.name=Ginger Crop
 
 item.di:ginger=Ginger
 item.di:honey_rub=Honey Rub
-item.di:herbal_mushroom_stew=Herbal Mushroom Stew
+item.di:herbal_mushroom_stew_0=Herbal Mushroom Stew
+item.di:herbal_mushroom_stew_1=Herbal Mushroom Stew
 item.di:ender_mushroom_stew=§5Ender Stew§r

@@ -28,8 +28,11 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
       });
 
       break;
-    case "di:herbal_mushroom_stew":
+    case "di:herbal_mushroom_stew_0":
       source.setDynamicProperty("has_food_poison", false);
+      break;
+    case "di:herbal_mushroom_stew_1":
+      source.setDynamicProperty("has_cold", false);
       break;
     case "di:honey_rub":
       source.setDynamicProperty("has_sunburn", false);
