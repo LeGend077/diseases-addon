@@ -74,7 +74,7 @@
 
 1. Create Water Bottles and collect some water.
 2. Search for beehives for honey because it's an important resource.
-3. Craft Boot and Helmet.
+3. Craft Boots and Helmet.
 4. Collect Ginger you find in your way.
 5. Collect mushrooms you find in your way.
 
