@@ -1,14 +1,14 @@
 # Diseases Add-On
 ## To-do list
 
-1. Cure for illness:
+1. ~~Cure for illness:~~
    - ~~Sunburn: Honey Rub~~
    - ~~Zombie Plague: Anti-Rot Stew~~
    - ~~Food Poisoning: Herbal Remedy~~
    - ~~Cold: Herbal Remedy Potion~~
    - ~~Ender Sickness: Ender Potion~~
-2. Zombie Plague
-3. Recheck Cold and Sunburn System and change rabies wait24hoursToDie to 24000 ticks
+2. ~~Zombie Plague~~
+3. ~~Recheck Cold and Sunburn System and change rabies wait24hoursToDie to 24000 ticks~~
 4. ~~Add death chances on Rabies~~ ✔️
 5. ~~Fix item not decreasing.~~ ✔️
 6. ~~Cold~~
