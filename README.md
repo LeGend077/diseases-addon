@@ -32,7 +32,7 @@
      ![image](https://github.com/user-attachments/assets/9708b85f-b087-4788-b965-aaddd10d565f)
 
 2. **Zombie Plague**
-   - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
+   - Getting bit by zombie gives you a 3-4% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness. So avoid zombies at all cost!
    - Cure: Golden Apple, Suspicious Stew, Fermented Spider Eye, etc. - Anti-Rot Stew
 

@@ -15,14 +15,14 @@ world.afterEvents.entityHurt.subscribe((e) => {
   if (
     hurtEntity instanceof Player &&
     zombiePlagueMobs.includes(damageSource.damagingEntity?.typeId) &&
-    Math.random() < 0.05
+    Math.random() < 0.035
   ) {
     hurtEntity.setDynamicProperty("has_zombie_plague", true)
     createNotif(
       hurtEntity,
       "DISEASE:",
       "You've caught Zombie Plague.",
-      "textures/ui/freeze_heart",
+      "textures/ui/hunger_effect_full",
       "disease"
     );
   }

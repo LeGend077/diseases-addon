@@ -13,6 +13,9 @@
     },
     "ender_mushroom_stew": {
       "textures": "textures/items/ender_mushroom_stew"
+    },
+    "anti_rot_mushroom_stew": {
+      "textures": "textures/items/anti_rot_mushroom_stew"
     }
   }
 }
