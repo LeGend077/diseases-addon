@@ -3,7 +3,7 @@
 
 1. Cure for illness:
    - ~~Sunburn: Honey Rub~~
-   - Zombie Plague: Anti-Rot Stew
+   - ~~Zombie Plague: Anti-Rot Stew~~
    - ~~Food Poisoning: Herbal Remedy~~
    - ~~Cold: Herbal Remedy Potion~~
    - ~~Ender Sickness: Ender Potion~~
@@ -29,24 +29,29 @@
    - Caused by prolong periods (5 minutes) in Cold Areas.
    - Can be avoided by wearing a Leather Chestplate/Tunic.
    - Cure: Herbal Mushroom Stew- Mushroom Stew, Golden Carrot, Honey, Ginger.
+   
      ![image](https://github.com/user-attachments/assets/9708b85f-b087-4788-b965-aaddd10d565f)
 
 2. **Zombie Plague**
-   - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
+   - Getting bit by zombie gives you a 3-4% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness. So avoid zombies at all cost!
-   - Cure: Golden Apple, Suspicious Stew, Fermented Spider Eye, etc. - Anti-Rot Stew
+   - Cure: Glistering Melon, Mushroom Stew, Fermented Spider Eye, Ghast Tear. - Anti-Rot Stew
+
+     ![image](https://github.com/user-attachments/assets/6db2548c-aa9a-4c06-aa06-99866d8209c7)
 
 3. **Sunburn**
    - Caused by prolong exposure (5 minutes) to Sunlight.
    - Can be avoided by wearing any Helmet.
    - You are set on fire for 4 seconds and will increase your thirst lost to +5 unless cured.
-   - Cure: Honey + Lily Pad = Honey Rub
+   - Cure: Honey + Lily Pad = Honey Rub.
+
      ![image](https://github.com/user-attachments/assets/9a3320ae-8589-4961-a011-2866b5afb73e)
 
-4. Food Poisoning
+4. **Food Poisoning**
    - A 50% chance to get poisoned by eating Raw Foods.
    - You'll get poisoned for 10 seconds; and hunger forever unless cured.
    - Cure: Herbal Mushroom Stew- Ginger, Coal, Honey, Mushroom Stew, Dandelion.
+     
      ![image](https://github.com/user-attachments/assets/80b39264-c88e-4748-93e9-4bb9fa9bb43f)
 
 5. **Rabies**
@@ -58,6 +63,7 @@
    - There is a counter that gets incremented each time you throw a pearl up to 8.
    - A 50% chance to increment the counter everytime you throw a pearl. If the counter is 8, you'll get ender sickness. So use your Ender Pearls wisely!
    - Cure: Ender Stew- Ender Eye, Chorus Fruit, Spider Eye.
+     
      ![image](https://github.com/user-attachments/assets/f8002f0e-ef33-4374-9dc3-ad8d7725887c)
 
 

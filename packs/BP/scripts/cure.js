@@ -60,9 +60,7 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
     case "di:honey_rub":
       source.setDynamicProperty("has_sunburn", false);
       if (source.getGameMode() !== GameMode.creative) {
-        source
-          .getComponent(EntityComponentTypes.Inventory)
-          .container.setItem(source.selectedSlotIndex, undefined);
+        source.getComponent(EntityComponentTypes.Inventory).container.setItem(source.selectedSlotIndex, undefined);
         props.thirstLostIncrease = 0;
         source.setDynamicProperty("diseaseProperties", JSON.stringify(props));
       }
@@ -73,6 +71,9 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
         "textures/gui/newgui/mob_effects/fire_resistance_effect",
         "success"
       );
+      break;
+    case "di:anti_rot_mushroom_stew":
+      source.setDynamicProperty("has_zombie_plague", false)
       break;
   }
 });
