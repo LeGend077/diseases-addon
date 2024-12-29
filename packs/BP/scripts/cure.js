@@ -73,7 +73,14 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
       );
       break;
     case "di:anti_rot_mushroom_stew":
-      source.setDynamicProperty("has_zombie_plague", false)
+      source.setDynamicProperty("has_zombie_plague", false);
+      createNotif(
+        source,
+        "DISEASE:",
+        "You've cured Zombie Plague.",
+        "textures/ui/hunger_effect_full",
+        "success"
+      );
       break;
   }
 });
