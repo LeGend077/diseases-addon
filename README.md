@@ -37,6 +37,8 @@
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness. So avoid zombies at all cost!
    - Cure: Glistering Melon, Mushroom Stew, Fermented Spider Eye, Ghast Tear. - Anti-Rot Stew
 
+     ![image](https://github.com/user-attachments/assets/6db2548c-aa9a-4c06-aa06-99866d8209c7)
+
 3. **Sunburn**
    - Caused by prolong exposure (5 minutes) to Sunlight.
    - Can be avoided by wearing any Helmet.
