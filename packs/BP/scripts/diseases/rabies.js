@@ -50,7 +50,7 @@ world.afterEvents.entityHurt.subscribe((ev) => {
       hurtEntity.getDynamicProperty("diseaseProperties")
     );
 
-    diseaseProperties.timeToDieDueRabies = 100; // change this to 100 when debugging
+    diseaseProperties.timeToDieDueRabies = 24000; // change this to 100 when debugging
     hurtEntity.setDynamicProperty("has_rabies", true);
     hurtEntity.setDynamicProperty(
       "diseaseProperties",
