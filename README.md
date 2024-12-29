@@ -1,19 +1,19 @@
 # Diseases Add-On
 ## To-do list
 
-1. Hot/Cold Bar (are we doing this?) (no we're not)
-2. Cure for illness:
+1. Cure for illness:
    - ~~Sunburn: Honey Rub~~
    - Zombie Plague: Anti-Rot Potion
    - ~~Food Poisoning: Herbal Remedy~~
    - ~~Cold: Herbal Remedy Potion~~
    - ~~Ender Sickness: Ender Potion~~
-3. Add death chances on Rabies
-4. Zombie Plague
-5. ~~Fix item not decreasing.~~
+2. Zombie Plague
+3. Recheck Cold and Sunburn System and change rabies wait24hoursToDie to 24000 ticks
+4. ~~Add death chances on Rabies~~ ✔️
+5. ~~Fix item not decreasing.~~ ✔️
 6. ~~Cold~~
-7. ~~Ender Sickness~~
-8. ~~Food Poisoning~~ 
+7. ~~Ender Sickness~~ ✔️
+8. ~~Food Poisoning~~ ✔️
 9. ~~Thirst Mechanism~~ ✔️
 10. ~~Add Ginger and its World Generation~~ ✔️
 11. ~~Sunburn~~ ✔️
