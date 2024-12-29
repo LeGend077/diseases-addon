@@ -41,6 +41,7 @@ function createNotif(source, title, desc, icon, type = "warn") {
 
   let typeNum = 0;
   switch (type) {
+    // No use to this lol!
     case "warn":
       typeNum += 1;
       break;

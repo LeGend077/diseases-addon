@@ -46,7 +46,7 @@ world.afterEvents.entityHurt.subscribe((e) => {
   if (
     hurtEntity instanceof Player &&
     zombiePlagueMobs.includes(damageSource.damagingEntity?.typeId) &&
-    Math.random() < 0.035
+    Math.random() < 0.01
   ) {
     hurtEntity.setDynamicProperty("has_zombie_plague", true);
     createNotif(

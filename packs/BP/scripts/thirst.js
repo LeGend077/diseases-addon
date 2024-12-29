@@ -11,7 +11,7 @@ import { clamp } from "./index.js";
 const thirstProps = {
   thirstMax: 100, // Maximum thirst a player can have
   thirstAdd: 20, // The amount thats added to thirst when player drinks. This property is also used to amount to subtract when player eats
-  thirstLostFromFood: 12,
+  thirstLostFromFood: 5,
   loseThirstEverySeconds: 5, // The time (in seconds) should player lose thirst
   foodsToEat: [
     "cooked_porkchop",

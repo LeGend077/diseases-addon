@@ -34,7 +34,7 @@ world.afterEvents.entityHurt.subscribe((ev) => {
   if (
     animalsToGetRabiesFrom.includes(damageSource.damagingEntity?.typeId) &&
     hurtEntity instanceof Player &&
-    Math.random() < 0.12 // 12% chance of getting rabies
+    Math.random() < 0.11 // 11% chance of getting rabies
   ) {
     if (!hurtEntity.getDynamicProperty("has_rabies")) {
       createNotif(
