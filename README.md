@@ -34,7 +34,7 @@
 2. **Zombie Plague**
    - Getting bit by zombie gives you a 5-6% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness. So avoid zombies at all cost!
-   - Cure: Golden Apple, Suspicious Stew, Fermented Spider Eye, etc. - Anti-Rot Stew
+   - Cure: Glistering Melon, Mushroom Stew, Fermented Spider Eye, Ghast Tear. - Anti-Rot Stew
 
 3. **Sunburn**
    - Caused by prolong exposure (5 minutes) to Sunlight.
@@ -43,7 +43,7 @@
    - Cure: Honey + Lily Pad = Honey Rub
      ![image](https://github.com/user-attachments/assets/9a3320ae-8589-4961-a011-2866b5afb73e)
 
-4. Food Poisoning
+4. **Food Poisoning**
    - A 50% chance to get poisoned by eating Raw Foods.
    - You'll get poisoned for 10 seconds; and hunger forever unless cured.
    - Cure: Herbal Mushroom Stew- Ginger, Coal, Honey, Mushroom Stew, Dandelion.
