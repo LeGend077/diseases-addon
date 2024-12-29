@@ -70,6 +70,16 @@
       - You can lose thirst from eating cooked foods.
       - You can gain thirst from drinking potions or water bottles.
 
+## Beehive Generation Chances
+
+| Biome | Chance |
+|--|--|
+| Meadow | 100%  |
+| Plains, Sunflower Plains | 5% |
+| Mangrove Swamp | 4% |
+| Flower Forest | 3% |
+| Forest, Birch Forest | 0.035% |
+
 ## To-do list
 
 1. ~~Cure for illness:~~ ✔️
