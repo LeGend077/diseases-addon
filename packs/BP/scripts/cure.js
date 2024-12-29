@@ -50,7 +50,7 @@ world.afterEvents.itemCompleteUse.subscribe((ev) => {
     case "di:herbal_mushroom_stew_1":
       source.setDynamicProperty("has_cold", false);
       createNotif(
-        player,
+        source,
         "DISEASE:",
         "You've cured Cold.",
         "textures/ui/freeze_heart",

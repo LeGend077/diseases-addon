@@ -46,11 +46,11 @@ function createNotif(source, title, desc, icon, type = "warn") {
       break;
     case "disease":
       typeNum += 2;
-      source.playSound("mob.ravager.hurt");
+      system.run(() => source.playSound("mob.ravager.hurt"));
       break;
     case "success":
       typeNum += 3;
-      source.playSound("random.toast");
+      system.run(() => source.playSound("random.toast"));
       break;
   }
 
