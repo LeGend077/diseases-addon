@@ -6,6 +6,8 @@ import "./crop.js";
 import "./cure.js";
 
 import "./diseases/zombie_plague.js";
+import { burnFromSunlight } from "./diseases/zombie_plague.js";
+
 import "./diseases/cold.js";
 import "./diseases/food_poisoning.js";
 
@@ -38,9 +40,19 @@ function createNotif(source, title, desc, icon, type = "warn") {
   }
 
   let typeNum = 0;
-  if (type === "warn") typeNum += 1;
-  else if (type === "disease") typeNum += 2;
-  else if (type === "success") typeNum += 3;
+  switch (type) {
+    case "warn":
+      typeNum += 1;
+      break;
+    case "disease":
+      typeNum += 2;
+      source.playSound("mob.ravager.hurt");
+      break;
+    case "success":
+      typeNum += 3;
+      source.playSound("random.toast");
+      break;
+  }
 
   const newTitle = padWithTabs(title, 40),
     newDesc = padWithTabs(desc, 40);
@@ -56,9 +68,7 @@ function createNotif(source, title, desc, icon, type = "warn") {
 const Diseases = {
   Rabies: {
     name: "has_rabies",
-    effects: [
-      { name: "slowness", duration: 1, amp: 1 },
-    ],
+    effects: [{ name: "slowness", duration: 1, amp: 1 }],
     funcs: [wait24HourToDie],
   },
   Ender_Sickness: {
@@ -84,7 +94,11 @@ const Diseases = {
   },
   Zombie_Plague: {
     name: "has_zombie_plague",
-    effects: [],
+    effects: [
+      { name: "hunger", duration: 5, amp: 1 },
+      { name: "slowness", duration: 5, amp: 1 },
+    ],
+    funcs: [burnFromSunlight],
   },
 };
 

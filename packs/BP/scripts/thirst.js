@@ -5,7 +5,6 @@ import {
   GameMode,
   EntityComponentTypes,
   Player,
-  EntityDamageCause,
 } from "@minecraft/server";
 import { clamp } from "./index.js";
 
