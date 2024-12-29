@@ -3,7 +3,7 @@
 
 1. Cure for illness:
    - ~~Sunburn: Honey Rub~~
-   - Zombie Plague: Anti-Rot Stew
+   - ~~Zombie Plague: Anti-Rot Stew~~
    - ~~Food Poisoning: Herbal Remedy~~
    - ~~Cold: Herbal Remedy Potion~~
    - ~~Ender Sickness: Ender Potion~~
