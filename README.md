@@ -70,7 +70,15 @@
       - You can lose thirst from eating cooked foods.
       - You can gain thirst from drinking potions or water bottles.
 
-## Beehive Generation Chances
+### Objectives in the beginning of your world
+
+1. Create Water Bottles and collect some water.
+2. Search for beehives for honey because it's an important resource.
+3. Craft Boot and Helment.
+4. Collect Ginger you find in your way.
+5. Collect mushrooms you find in your way.
+
+### Beehive Generation Chances
 
 | Biome | Chance |
 |--|--|
