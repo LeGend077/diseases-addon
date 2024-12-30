@@ -28,7 +28,7 @@
      ![image](https://github.com/user-attachments/assets/9708b85f-b087-4788-b965-aaddd10d565f)
 
 2. **Zombie Plague**
-   - Getting bit by zombie gives you a 3-4% to get the Zombie Plague.
+   - Getting bit by zombie gives you a 1% to get the Zombie Plague.
    - Getting Zombie Plague gives you the traits of zombie, getting burned from sunlight, slowness and hungerness. So avoid zombies at all cost!
    - Cure: Anti-Rot Stew | Recipe: Glistering Melon, Mushroom Stew, Fermented Spider Eye and Ghast Tear.
 
@@ -50,7 +50,7 @@
      ![image](https://github.com/user-attachments/assets/80b39264-c88e-4748-93e9-4bb9fa9bb43f)
 
 5. **Rabies**
-   - A 12% chance to get rabies from getting bit by Polar Bears and Wolves. So avoid fights with Polar Bears and Wolves!
+   - A 11% chance to get rabies from getting bit by Polar Bears and Wolves. So avoid fights with Polar Bears and Wolves!
    - Getting a rabies disallows you from drinking water, which is crucial!
    - Only 2% chance of survival. No cure.
 
